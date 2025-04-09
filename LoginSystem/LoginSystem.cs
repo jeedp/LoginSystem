@@ -26,9 +26,9 @@ namespace LoginSystem
 
         private void LoginSystem_Load(object sender, EventArgs e)
         {
-            this.Panel_Title.MouseDown += new MouseEventHandler(this.MouseDown);
-            this.Panel_Title.MouseMove += new MouseEventHandler(this.MouseMove);
-            this.Panel_Title.MouseUp += new MouseEventHandler(this.MouseUp);
+            this.Panel_Title.MouseDown += this.MouseDown;
+            this.Panel_Title.MouseMove += this.MouseMove;
+            this.Panel_Title.MouseUp += this.MouseUp;
         }
 
 
@@ -37,7 +37,8 @@ namespace LoginSystem
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
+            //Application.Exit();
         }
 
 
