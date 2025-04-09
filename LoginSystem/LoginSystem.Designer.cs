@@ -35,6 +35,10 @@
             this.pictureBox_SteamLogo = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label_Steam = new System.Windows.Forms.Label();
+            this.label_Password = new System.Windows.Forms.Label();
+            this.label_AccountName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox_RememberMe = new System.Windows.Forms.CheckBox();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SteamLogo)).BeginInit();
             this.SuspendLayout();
@@ -75,7 +79,7 @@
             this.textBox_AccountName.ForeColor = System.Drawing.Color.White;
             this.textBox_AccountName.Location = new System.Drawing.Point(48, 148);
             this.textBox_AccountName.Name = "textBox_AccountName";
-            this.textBox_AccountName.Size = new System.Drawing.Size(273, 49);
+            this.textBox_AccountName.Size = new System.Drawing.Size(478, 49);
             this.textBox_AccountName.TabIndex = 2;
             this.textBox_AccountName.Text = "asdawds";
             // 
@@ -97,20 +101,64 @@
             this.textBox1.ForeColor = System.Drawing.Color.White;
             this.textBox1.Location = new System.Drawing.Point(48, 241);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 49);
+            this.textBox1.Size = new System.Drawing.Size(478, 49);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "asdawds";
             // 
             // label_Steam
             // 
             this.label_Steam.AutoSize = true;
-            this.label_Steam.Font = new System.Drawing.Font("Segoe UI Semibold", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Steam.ForeColor = System.Drawing.Color.White;
-            this.label_Steam.Location = new System.Drawing.Point(141, 52);
+            this.label_Steam.Font = new System.Drawing.Font("Segoe UI Semibold", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Steam.ForeColor = System.Drawing.Color.LightGray;
+            this.label_Steam.Location = new System.Drawing.Point(141, 40);
             this.label_Steam.Name = "label_Steam";
-            this.label_Steam.Size = new System.Drawing.Size(160, 57);
+            this.label_Steam.Size = new System.Drawing.Size(130, 46);
             this.label_Steam.TabIndex = 5;
             this.label_Steam.Text = "STEAM";
+            // 
+            // label_Password
+            // 
+            this.label_Password.AutoSize = true;
+            this.label_Password.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Password.Location = new System.Drawing.Point(45, 216);
+            this.label_Password.Name = "label_Password";
+            this.label_Password.Size = new System.Drawing.Size(78, 17);
+            this.label_Password.TabIndex = 6;
+            this.label_Password.Text = "PASSWORD";
+            // 
+            // label_AccountName
+            // 
+            this.label_AccountName.AutoSize = true;
+            this.label_AccountName.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AccountName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label_AccountName.Location = new System.Drawing.Point(45, 123);
+            this.label_AccountName.Name = "label_AccountName";
+            this.label_AccountName.Size = new System.Drawing.Size(201, 17);
+            this.label_AccountName.TabIndex = 7;
+            this.label_AccountName.Text = "SIGN IN WITH ACCOUNT NAME";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(549, 123);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "OR SIGN IN WITH QR";
+            // 
+            // checkBox_RememberMe
+            // 
+            this.checkBox_RememberMe.AutoSize = true;
+            this.checkBox_RememberMe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox_RememberMe.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_RememberMe.Location = new System.Drawing.Point(48, 307);
+            this.checkBox_RememberMe.Name = "checkBox_RememberMe";
+            this.checkBox_RememberMe.Size = new System.Drawing.Size(115, 21);
+            this.checkBox_RememberMe.TabIndex = 9;
+            this.checkBox_RememberMe.Text = "Remember Me";
+            this.checkBox_RememberMe.UseVisualStyleBackColor = true;
             // 
             // LoginSystem
             // 
@@ -118,6 +166,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(937, 539);
+            this.Controls.Add(this.checkBox_RememberMe);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_AccountName);
+            this.Controls.Add(this.label_Password);
             this.Controls.Add(this.label_Steam);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox_SteamLogo);
@@ -143,6 +195,10 @@
         private System.Windows.Forms.PictureBox pictureBox_SteamLogo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label_Steam;
+        private System.Windows.Forms.Label label_Password;
+        private System.Windows.Forms.Label label_AccountName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox_RememberMe;
     }
 }
 
