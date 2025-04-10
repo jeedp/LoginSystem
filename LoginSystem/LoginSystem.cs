@@ -29,6 +29,9 @@ namespace LoginSystem
             this.Panel_Title.MouseDown += this.MouseDown;
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;
+
+            //textBox_AccountName.Font = new Font(textBox_AccountName.Font.FontFamily, 14);
+            //textBox_Password.Font = new Font(textBox_Password.Font.FontFamily, 14);
         }
 
 

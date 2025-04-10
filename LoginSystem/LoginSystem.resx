@@ -129,7 +129,7 @@
   <data name="pictureBox_SteamLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAACDpJREFUaEPtWmtQlOcVTv827Uz7I7396bSxqRoFG7XxkohRcVTihbQ2pqmXGLWr
+        DAAACwwBP0AiyAAACDpJREFUaEPtWmtQlOcVTv827Uz7I7396bSxqRoFG7XxkohRcVTihbQ2pqmXGLWr
         WNKYeEclSuqkpDNNNdp6gdBUlEalCaigoEgTA1Qrq1gBo0iNxsj9fllens7zurvdPR/fst/uYpwMz8yZ
         3X2/y/s8e857znm/3Qce6Ec/+vGlBoCvAwgHMAnALAAzne/DAHxNnn/fA8B3ANgAHABwA73jvwD2A1jC
         a+X97gsA+AqA6QCyAXRJBRbgAHAEQBTvKef5QgBgGoASyTQEOA9gqpzvngHAdwFkSFZ9gEOcS87fp3B6
@@ -170,7 +170,7 @@
   <data name="pictureBox_QRCode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAA3dJREFUeF7tnSHOFEEQRkciEEgEAsEBkAgEkgNwAI6A4ABIjoBAcAAER0BwDAQC
+        DgAACw4BQL7hQQAAA3dJREFUeF7tnSHOFEEQRkciEEgEAsEBkAgEkgNwAI6A4ABIjoBAcAAER0BwDAQC
         gUAiSSBfMp10aqtmpmdrtnvgveSprunp6u9P6N3ZXaYJAAAAAAAAAAAAAAAG49E0TS8P9qm96cxdp7ao
         MQ/NZWuz1Z50Qwv4c7Af7E1nHjq1RY15aC5bm632pBsEcimBOBLIgRJIAwRy6ZCB/J6m6Vujv5x55J5A
         dJrSuLxTXRMFonvb9aypHu08cshAtOBWos3aE0jts+qa1nssoR7tPJJAViQQAunH1kDsePGazToqENXb
@@ -357,7 +357,10 @@
         AAA=
 </value>
   </data>
-  <metadata name="cuiControlBlur1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="cuiControlBlur_QRImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>272, 17</value>
+  </metadata>
+  <metadata name="cuiControlBlur_QRPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>494, 17</value>
   </metadata>
 </root>
