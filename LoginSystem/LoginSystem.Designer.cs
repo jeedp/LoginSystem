@@ -56,6 +56,9 @@
             this.cuiControlBlur_QRPanel = new CuoreUI.Components.cuiControlBlur(this.components);
             this.panel_AccountName = new System.Windows.Forms.Panel();
             this.panel_Password = new System.Windows.Forms.Panel();
+            this.label_ErrorMsg = new System.Windows.Forms.Label();
+            this.panel_ErrorAccountName = new System.Windows.Forms.Panel();
+            this.panel_ErrorPassword = new System.Windows.Forms.Panel();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SteamLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_QRCode)).BeginInit();
@@ -138,9 +141,10 @@
             // label_Password
             // 
             this.label_Password.AutoSize = true;
+            this.label_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(36)))));
             this.label_Password.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label_Password.Location = new System.Drawing.Point(51, 213);
+            this.label_Password.Location = new System.Drawing.Point(49, 213);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(86, 19);
             this.label_Password.TabIndex = 6;
@@ -149,9 +153,10 @@
             // label_AccountName
             // 
             this.label_AccountName.AutoSize = true;
+            this.label_AccountName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
             this.label_AccountName.Font = new System.Drawing.Font("Segoe UI Variable Display", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_AccountName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label_AccountName.Location = new System.Drawing.Point(51, 122);
+            this.label_AccountName.Location = new System.Drawing.Point(48, 122);
             this.label_AccountName.Name = "label_AccountName";
             this.label_AccountName.Size = new System.Drawing.Size(217, 19);
             this.label_AccountName.TabIndex = 7;
@@ -214,6 +219,7 @@
             this.cuiButton_SignIn.Size = new System.Drawing.Size(370, 58);
             this.cuiButton_SignIn.TabIndex = 13;
             this.cuiButton_SignIn.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_SignIn.Click += new System.EventHandler(this.cuiButton_SignIn_Click);
             // 
             // cuiFormRounder_LoginSystem
             // 
@@ -461,6 +467,37 @@
             this.panel_Password.Size = new System.Drawing.Size(515, 49);
             this.panel_Password.TabIndex = 28;
             // 
+            // label_ErrorMsg
+            // 
+            this.label_ErrorMsg.AutoSize = true;
+            this.label_ErrorMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(28)))), ((int)(((byte)(32)))));
+            this.label_ErrorMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ErrorMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.label_ErrorMsg.Location = new System.Drawing.Point(88, 421);
+            this.label_ErrorMsg.Name = "label_ErrorMsg";
+            this.label_ErrorMsg.Size = new System.Drawing.Size(429, 20);
+            this.label_ErrorMsg.TabIndex = 29;
+            this.label_ErrorMsg.Text = "Please check your password and account name and try again.";
+            this.label_ErrorMsg.Visible = false;
+            // 
+            // panel_ErrorAccountName
+            // 
+            this.panel_ErrorAccountName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_ErrorAccountName.Location = new System.Drawing.Point(51, 146);
+            this.panel_ErrorAccountName.Name = "panel_ErrorAccountName";
+            this.panel_ErrorAccountName.Size = new System.Drawing.Size(517, 52);
+            this.panel_ErrorAccountName.TabIndex = 28;
+            this.panel_ErrorAccountName.Visible = false;
+            // 
+            // panel_ErrorPassword
+            // 
+            this.panel_ErrorPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_ErrorPassword.Location = new System.Drawing.Point(51, 236);
+            this.panel_ErrorPassword.Name = "panel_ErrorPassword";
+            this.panel_ErrorPassword.Size = new System.Drawing.Size(517, 52);
+            this.panel_ErrorPassword.TabIndex = 29;
+            this.panel_ErrorPassword.Visible = false;
+            // 
             // LoginSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -468,7 +505,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(937, 539);
             this.Controls.Add(this.panel_Password);
+            this.Controls.Add(this.panel_ErrorPassword);
             this.Controls.Add(this.panel_AccountName);
+            this.Controls.Add(this.panel_ErrorAccountName);
+            this.Controls.Add(this.label_ErrorMsg);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -532,6 +572,9 @@
         private CuoreUI.Components.cuiControlBlur cuiControlBlur_QRPanel;
         private System.Windows.Forms.Panel panel_Password;
         private System.Windows.Forms.Panel panel_AccountName;
+        private System.Windows.Forms.Label label_ErrorMsg;
+        private System.Windows.Forms.Panel panel_ErrorAccountName;
+        private System.Windows.Forms.Panel panel_ErrorPassword;
     }
 }
 

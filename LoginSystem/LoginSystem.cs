@@ -17,7 +17,7 @@ namespace LoginSystem
         private bool mouseDown;
         private Point lastLocation;
 
-        
+        private bool hidden = false;
 
         public LoginSystem()
         {
@@ -30,8 +30,8 @@ namespace LoginSystem
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;
 
-            //textBox_AccountName.Font = new Font(textBox_AccountName.Font.FontFamily, 14);
-            //textBox_Password.Font = new Font(textBox_Password.Font.FontFamily, 14);
+            textBox_AccountName.TextChanged += HideErrorMsg;
+            textBox_Password.TextChanged += HideErrorMsg;
         }
 
 
@@ -40,8 +40,36 @@ namespace LoginSystem
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
             //Application.Exit();
+            Environment.Exit(0);
+        }
+
+        private void cuiButton_SignIn_Click(object sender, EventArgs e)
+        {
+            string accountName = "admin";
+            string password = "1234";
+
+            if (textBox_AccountName.Text == accountName && textBox_Password.Text == password)
+            {
+                //MessageBox.Show("Login successful!");
+                
+                this.Hide(); 
+                PersonalInformationProfile profileForm = new PersonalInformationProfile();
+                profileForm.Show(); 
+            }
+            else
+            {
+                //MessageBox.Show("Invalid account name or password.");
+
+                label_ErrorMsg.Visible = true;  
+                label_ErrorMsg.Show();
+                    
+                panel_ErrorAccountName.Visible = true;  
+                panel_ErrorAccountName.Show(); 
+                
+                panel_ErrorPassword.Visible = true;
+                panel_ErrorPassword.Show();
+            }
         }
 
 
@@ -55,6 +83,17 @@ namespace LoginSystem
 
 
 
+
+
+        
+
+        private void HideErrorMsg(object sender, EventArgs e)
+        {
+            panel_ErrorAccountName.Visible = false;
+            panel_ErrorPassword.Visible = false;
+            label_ErrorMsg.Visible = false;
+            hidden = true;
+        }
 
 
 
