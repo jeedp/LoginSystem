@@ -17,7 +17,14 @@ namespace LoginSystem
         private bool mouseDown;
         private Point lastLocation;
 
-        private bool hidden = false;
+        private string accountName = "admin";
+        private string password = "1234";
+
+        //private bool forgotPassword = false;
+
+
+
+
 
         public LoginSystem()
         {
@@ -44,10 +51,9 @@ namespace LoginSystem
             Environment.Exit(0);
         }
 
-        private void cuiButton_SignIn_Click(object sender, EventArgs e)
+        public void cuiButton_SignIn_Click(object sender, EventArgs e)
         {
-            string accountName = "admin";
-            string password = "1234";
+            
 
             if (textBox_AccountName.Text == accountName && textBox_Password.Text == password)
             {
@@ -72,6 +78,15 @@ namespace LoginSystem
             }
         }
 
+        private void cuiButton_CantSignIn_Click(object sender, EventArgs e)
+        {
+            //password = textBox_Password.Text;
+
+            if (textBox_AccountName.Text == accountName)
+                MessageBox.Show("Password: " + password);
+            else
+                MessageBox.Show("Invalid account name.");
+        }
 
 
 
@@ -81,18 +96,12 @@ namespace LoginSystem
 
 
 
-
-
-
-
-        
 
         private void HideErrorMsg(object sender, EventArgs e)
         {
             panel_ErrorAccountName.Visible = false;
             panel_ErrorPassword.Visible = false;
             label_ErrorMsg.Visible = false;
-            hidden = true;
         }
 
 

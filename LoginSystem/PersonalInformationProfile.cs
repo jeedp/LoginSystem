@@ -31,7 +31,6 @@ namespace LoginSystem
             this.panel_MenuTop.MouseMove += this.MouseMove;
             this.panel_MenuTop.MouseUp += this.MouseUp;
 
-            //this.WindowState = FormWindowState.Maximized;
         }
 
 

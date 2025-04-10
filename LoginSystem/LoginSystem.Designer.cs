@@ -370,6 +370,7 @@
             this.cuiButton_CantSignIn.Size = new System.Drawing.Size(153, 45);
             this.cuiButton_CantSignIn.TabIndex = 24;
             this.cuiButton_CantSignIn.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_CantSignIn.Click += new System.EventHandler(this.cuiButton_CantSignIn_Click);
             // 
             // cuiButton_CreateAccount
             // 
