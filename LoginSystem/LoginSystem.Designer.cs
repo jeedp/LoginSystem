@@ -101,7 +101,7 @@
             this.textBox_AccountName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_AccountName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.textBox_AccountName.ForeColor = System.Drawing.Color.White;
-            this.textBox_AccountName.Location = new System.Drawing.Point(16, 15);
+            this.textBox_AccountName.Location = new System.Drawing.Point(16, 14);
             this.textBox_AccountName.Name = "textBox_AccountName";
             this.textBox_AccountName.Size = new System.Drawing.Size(484, 21);
             this.textBox_AccountName.TabIndex = 2;
@@ -122,8 +122,9 @@
             this.textBox_Password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_Password.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
             this.textBox_Password.ForeColor = System.Drawing.Color.White;
-            this.textBox_Password.Location = new System.Drawing.Point(16, 14);
+            this.textBox_Password.Location = new System.Drawing.Point(16, 17);
             this.textBox_Password.Name = "textBox_Password";
+            this.textBox_Password.PasswordChar = '*';
             this.textBox_Password.Size = new System.Drawing.Size(484, 21);
             this.textBox_Password.TabIndex = 4;
             // 
