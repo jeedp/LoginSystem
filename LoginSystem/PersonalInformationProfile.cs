@@ -29,8 +29,6 @@ namespace LoginSystem
 
         private void PersonalInformationProfile_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'studentDBDataSet1.Students' table. You can move, or remove it, as needed.
-            this.studentsTableAdapter.Fill(this.studentDBDataSet1.Students);
             this.Panel_Title.MouseDown += this.MouseDown;
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;
