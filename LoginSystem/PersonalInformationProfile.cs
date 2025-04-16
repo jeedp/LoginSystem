@@ -29,6 +29,8 @@ namespace LoginSystem
 
         private void PersonalInformationProfile_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentDBDataSet1.Students' table. You can move, or remove it, as needed.
+            this.studentsTableAdapter.Fill(this.studentDBDataSet1.Students);
             this.Panel_Title.MouseDown += this.MouseDown;
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;
@@ -46,27 +48,15 @@ namespace LoginSystem
             //panel_Menu_AccountDetails.Visible = true;           panel_Menu_AccountDetails.Show();
 
             panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
-            panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
-
             panel_bg_FamilyManagement.BackColor = Color.FromArgb(27, 40, 56);
-            panel_bg_FamilyManagement.BackColor = Color.FromArgb(27, 40, 56);
-
             panel_bg_LanguagePreferences.BackColor = Color.FromArgb(27, 40, 56);
-            panel_bg_LanguagePreferences.BackColor = Color.FromArgb(27, 40, 56);
-
             panel_bg_CookiesBrowsing.BackColor = Color.FromArgb(27, 40, 56);
-            panel_bg_CookiesBrowsing.BackColor = Color.FromArgb(27, 40, 56);
-
             panel_bg_NotificationSetting.BackColor = Color.FromArgb(27, 40, 56);
-            panel_bg_NotificationSetting.BackColor = Color.FromArgb(27, 40, 56);
-
-
 
 
 
             if (File.Exists(filePath))
             {
-                //string savedData = File.ReadAllText(filePath);
                 textBox_Output.Text = File.ReadAllText(filePath);
             }
         }
@@ -92,6 +82,7 @@ namespace LoginSystem
             this.WindowState = FormWindowState.Minimized;
         }
 
+        // Form Dragging
         private new void MouseDown(object sender, MouseEventArgs e)
         {
             _mouseDown = true;
@@ -122,22 +113,48 @@ namespace LoginSystem
 
 
 
+        // MENU BUTTONS
+
+        private void cuiButton_AccountDetails_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_AccountDetails);
+        }
+
+        private void cuiButton_StorePreferences_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_StorePreferences);
+        }
+
+        private void cuiButton_FamilyManagement_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_FamilyManagement);
+        }
+
+        private void cuiButton_LanguagePreferences_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_LanguagePreferences);
+        }
+
+        private void cuiButton_CookiesBrowsing_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_CookiesBrowsing);
+        }
+
+        private void cuiButton_NotificationSetting_Click(object sender, EventArgs e)
+        {
+            ShowSelectedButtonAndPanel(cuiButton_NotificationSetting);
+        }
+
+
+
+
+
+
+
+
+
+
         // ACCOUNT DETAILS
-
-        private void textBox_FullName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_Age_TextChanged(object sender, EventArgs e)
-        {
-            //if (System.Text.RegularExpressions.Regex.IsMatch(textBox_Age.Text, "[^0-9]"))
-            //{
-            //    MessageBox.Show("Please enter only numbers.");
-            //    textBox_Age.Text = System.Text.RegularExpressions.Regex.Replace(textBox_Age.Text, "[^0-9]", "");
-            //    textBox_Age.SelectionStart = textBox_Age.Text.Length;
-            //}
-        }
 
         private void textBox_Age_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -150,13 +167,12 @@ namespace LoginSystem
         
         private void cuiButton_Save_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox_FullName.Text) &&
-                !string.IsNullOrWhiteSpace(textBox_Age.Text) &&
-                comboBox_Gender.SelectedItem != null)
+            if (!string.IsNullOrWhiteSpace(textBox_FullName.Text)
+                && !string.IsNullOrWhiteSpace(textBox_Age.Text)
+                && comboBox_Gender.SelectedItem != null)
             {
                label_SavedSuccessfully.Visible = true;
                label_SavedSuccessfully.Show();
-
 
                 // saving 
                 string username = textBox_FullName.Text.Trim();
@@ -167,10 +183,6 @@ namespace LoginSystem
 
                 // Show in textBox_Output
                 textBox_Output.Text = "";
-
-                textBox_Output.AppendText(username + Environment.NewLine);
-                //textBox_OutputAge.AppendText(age + Environment.NewLine);
-                //textBox_OutputGender.AppendText(gender + Environment.NewLine);
 
                 // Save to file
                 string filePath = "userdata.txt";
@@ -187,8 +199,7 @@ namespace LoginSystem
 
                 if (File.Exists(filePath))
                 {
-                    string savedData = File.ReadAllText(filePath);
-                    textBox_Output.Text = savedData;
+                    textBox_Output.Text = File.ReadAllText(filePath);
                 }
             }
             else
@@ -210,40 +221,10 @@ namespace LoginSystem
 
 
 
+
         // FAMILY MANAGEMENT
 
-        private void cuiButton_AccountDetails_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_AccountDetails);
 
-            //panel_Menu_AccountDetails.Height = 360;             panel_Menu_AccountDetails.Width = 963;
-            //panel_Menu_AccountDetails.Visible = true;           panel_Menu_AccountDetails.Show();
-        }
-
-        private void cuiButton_StorePreferences_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_StorePreferences);
-        }
-
-        private void cuiButton_FamilyManagement_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_FamilyManagement);
-        }
-
-        private void cuiButton_LanguagePreferences_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_LanguagePreferences);
-        }
-
-        private void cuiButton_CookiesBrowsing_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_CookiesBrowsing);
-        }
-
-        private void cuiButton_NotificationSetting_Click(object sender, EventArgs e)
-        {
-            HighlightButtonAndPanel(cuiButton_NotificationSetting);
-        }
 
 
 
@@ -264,7 +245,7 @@ namespace LoginSystem
             label_SavedSuccessfully.Visible = false;
         }
 
-        private void HighlightButtonAndPanel(cuiButton activeButton)
+        private void ShowSelectedButtonAndPanel(cuiButton activeButton)
         {
             buttonBGButtonMap = new Dictionary<cuiButton, Panel>
             {
@@ -294,27 +275,16 @@ namespace LoginSystem
                 pair.Value.BackColor = (pair.Key == activeButton)
                     ? Color.FromArgb(26, 159, 255)
                     : Color.FromArgb(27, 40, 56);
-
-                foreach (var panel in buttonMenuPanelMap.Values)
-                {
-                    //bool isActive = buttonMenuPanelMap[activeButton] == panel;
-                    panel.Height = (buttonMenuPanelMap[activeButton] == panel) ? 292 : 0;
-                    panel.Width = (buttonMenuPanelMap[activeButton] == panel) ? 722 : 0;
-                }
             }
 
+            foreach (var panel in buttonMenuPanelMap.Values)
+            {
+                panel.Height = (buttonMenuPanelMap[activeButton] == panel) ? 292 : 0;
+                panel.Width = (buttonMenuPanelMap[activeButton] == panel) ? 722 : 0;
+            }
 
         }
 
         
-
-
-
-
-
-
-
-        
-
     }
 }

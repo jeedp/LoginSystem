@@ -108,13 +108,13 @@ namespace LoginSystem
 
 
 
-        private void MouseDown(object sender, MouseEventArgs e)
+        private new void MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
             lastLocation = e.Location;
         }
 
-        private void MouseMove(object sender, MouseEventArgs e)
+        private new void MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
@@ -124,7 +124,7 @@ namespace LoginSystem
             }
         }
 
-        private void MouseUp(object sender, MouseEventArgs e)
+        private new void MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
