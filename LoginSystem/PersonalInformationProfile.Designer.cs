@@ -71,6 +71,10 @@
             this.panel_ErrorAge = new System.Windows.Forms.Panel();
             this.panel_ErrorFullName = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel_Menu_FamilyManagement = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.cuiButton_AccountDetails = new CuoreUI.Controls.cuiButton();
             this.panel_bg_AccountDetails = new System.Windows.Forms.Panel();
             this.panel_bg_StorePreferences = new System.Windows.Forms.Panel();
@@ -83,6 +87,18 @@
             this.cuiButton_CookiesBrowsing = new CuoreUI.Controls.cuiButton();
             this.panel_bg_NotificationSetting = new System.Windows.Forms.Panel();
             this.cuiButton_NotificationSetting = new CuoreUI.Controls.cuiButton();
+            this.panel_Menu_StorePreferences = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel_Menu_LanguagePreferences = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel_Menu_CookiesBrowsing = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel_Menu_NotificationSetting = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.Panel_Title.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_MenuBottom.SuspendLayout();
@@ -91,12 +107,23 @@
             this.panel_Gender.SuspendLayout();
             this.panel_Age.SuspendLayout();
             this.panel_FullName.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel_Menu_FamilyManagement.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel_bg_AccountDetails.SuspendLayout();
             this.panel_bg_StorePreferences.SuspendLayout();
             this.panel_bg_FamilyManagement.SuspendLayout();
             this.panel_bg_LanguagePreferences.SuspendLayout();
             this.panel_bg_CookiesBrowsing.SuspendLayout();
             this.panel_bg_NotificationSetting.SuspendLayout();
+            this.panel_Menu_StorePreferences.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel_Menu_LanguagePreferences.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel_Menu_CookiesBrowsing.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel_Menu_NotificationSetting.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -548,7 +575,7 @@
             this.panel_Menu_AccountDetails.Controls.Add(this.panel4);
             this.panel_Menu_AccountDetails.Location = new System.Drawing.Point(330, 298);
             this.panel_Menu_AccountDetails.Name = "panel_Menu_AccountDetails";
-            this.panel_Menu_AccountDetails.Size = new System.Drawing.Size(963, 360);
+            this.panel_Menu_AccountDetails.Size = new System.Drawing.Size(0, 0);
             this.panel_Menu_AccountDetails.TabIndex = 8;
             // 
             // panel10
@@ -556,9 +583,9 @@
             this.panel10.Controls.Add(this.textBox_Output);
             this.panel10.Controls.Add(this.label4);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(613, 38);
+            this.panel10.Location = new System.Drawing.Point(-350, 38);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(350, 322);
+            this.panel10.Size = new System.Drawing.Size(350, 0);
             this.panel10.TabIndex = 36;
             // 
             // textBox_Output
@@ -781,11 +808,55 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(963, 38);
+            this.panel4.Size = new System.Drawing.Size(0, 38);
             this.panel4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(27, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 19);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Account Information";
+            // 
+            // panel_Menu_FamilyManagement
+            // 
+            this.panel_Menu_FamilyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel13);
+            this.panel_Menu_FamilyManagement.Location = new System.Drawing.Point(330, 298);
+            this.panel_Menu_FamilyManagement.Name = "panel_Menu_FamilyManagement";
+            this.panel_Menu_FamilyManagement.Size = new System.Drawing.Size(963, 360);
+            this.panel_Menu_FamilyManagement.TabIndex = 37;
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel13.Controls.Add(this.label6);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(963, 38);
+            this.panel13.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(26, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 19);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Student Management";
             // 
             // cuiButton_AccountDetails
             // 
@@ -1070,12 +1141,141 @@
             this.cuiButton_NotificationSetting.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton_NotificationSetting.Click += new System.EventHandler(this.cuiButton_NotificationSetting_Click);
             // 
+            // panel_Menu_StorePreferences
+            // 
+            this.panel_Menu_StorePreferences.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_StorePreferences.Controls.Add(this.panel5);
+            this.panel_Menu_StorePreferences.Location = new System.Drawing.Point(330, 298);
+            this.panel_Menu_StorePreferences.Name = "panel_Menu_StorePreferences";
+            this.panel_Menu_StorePreferences.Size = new System.Drawing.Size(0, 0);
+            this.panel_Menu_StorePreferences.TabIndex = 38;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(0, 38);
+            this.panel5.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(26, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 19);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Store Preferences";
+            // 
+            // panel_Menu_LanguagePreferences
+            // 
+            this.panel_Menu_LanguagePreferences.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_LanguagePreferences.Controls.Add(this.panel6);
+            this.panel_Menu_LanguagePreferences.Location = new System.Drawing.Point(330, 298);
+            this.panel_Menu_LanguagePreferences.Name = "panel_Menu_LanguagePreferences";
+            this.panel_Menu_LanguagePreferences.Size = new System.Drawing.Size(0, 0);
+            this.panel_Menu_LanguagePreferences.TabIndex = 39;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel6.Controls.Add(this.label8);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(0, 38);
+            this.panel6.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(26, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 19);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Language Preferences";
+            // 
+            // panel_Menu_CookiesBrowsing
+            // 
+            this.panel_Menu_CookiesBrowsing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_CookiesBrowsing.Controls.Add(this.panel8);
+            this.panel_Menu_CookiesBrowsing.Location = new System.Drawing.Point(330, 298);
+            this.panel_Menu_CookiesBrowsing.Name = "panel_Menu_CookiesBrowsing";
+            this.panel_Menu_CookiesBrowsing.Size = new System.Drawing.Size(0, 0);
+            this.panel_Menu_CookiesBrowsing.TabIndex = 40;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel8.Controls.Add(this.label9);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(0, 38);
+            this.panel8.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(26, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(156, 19);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Cookies and Browsing";
+            // 
+            // panel_Menu_NotificationSetting
+            // 
+            this.panel_Menu_NotificationSetting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_NotificationSetting.Controls.Add(this.panel7);
+            this.panel_Menu_NotificationSetting.Location = new System.Drawing.Point(330, 298);
+            this.panel_Menu_NotificationSetting.Name = "panel_Menu_NotificationSetting";
+            this.panel_Menu_NotificationSetting.Size = new System.Drawing.Size(0, 0);
+            this.panel_Menu_NotificationSetting.TabIndex = 41;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(0, 38);
+            this.panel7.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label10.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(26, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 19);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Notification Setting";
+            // 
             // PersonalInformationProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(1347, 740);
+            this.Controls.Add(this.panel_Menu_NotificationSetting);
+            this.Controls.Add(this.panel_Menu_CookiesBrowsing);
+            this.Controls.Add(this.panel_Menu_LanguagePreferences);
+            this.Controls.Add(this.panel_Menu_StorePreferences);
+            this.Controls.Add(this.panel_Menu_FamilyManagement);
             this.Controls.Add(this.panel_bg_NotificationSetting);
             this.Controls.Add(this.panel_bg_CookiesBrowsing);
             this.Controls.Add(this.panel_bg_LanguagePreferences);
@@ -1105,12 +1305,29 @@
             this.panel_Age.PerformLayout();
             this.panel_FullName.ResumeLayout(false);
             this.panel_FullName.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel_Menu_FamilyManagement.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             this.panel_bg_AccountDetails.ResumeLayout(false);
             this.panel_bg_StorePreferences.ResumeLayout(false);
             this.panel_bg_FamilyManagement.ResumeLayout(false);
             this.panel_bg_LanguagePreferences.ResumeLayout(false);
             this.panel_bg_CookiesBrowsing.ResumeLayout(false);
             this.panel_bg_NotificationSetting.ResumeLayout(false);
+            this.panel_Menu_StorePreferences.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel_Menu_LanguagePreferences.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel_Menu_CookiesBrowsing.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel_Menu_NotificationSetting.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1171,5 +1388,21 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox textBox_Output;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel_Menu_FamilyManagement;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel_Menu_StorePreferences;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel_Menu_NotificationSetting;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel_Menu_CookiesBrowsing;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel_Menu_LanguagePreferences;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label8;
     }
 }

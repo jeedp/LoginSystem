@@ -15,7 +15,10 @@ namespace LoginSystem
         private Point _lastLocation;
 
         private string filePath = "userdata.txt";
-        private Dictionary<cuiButton, Panel> buttonPanelMap;
+
+        private Dictionary<cuiButton, Panel> buttonBGButtonMap;
+        private Dictionary<cuiButton, Panel> buttonMenuPanelMap;
+
 
 
 
@@ -38,8 +41,9 @@ namespace LoginSystem
             textBox_Age.TextChanged += HideErrorMsg;
             comboBox_Gender.TextChanged += HideErrorMsg;
 
-            //panel_bg_AccountDetails.BackColor = Color.FromArgb(27, 40, 56);
-            //panel_bg_AccountDetails.BackColor = Color.FromArgb(27, 40, 56);
+            // Show Account Details panel by default
+            //panel_Menu_AccountDetails.Height = 292;             panel_Menu_AccountDetails.Width = 722;
+            //panel_Menu_AccountDetails.Visible = true;           panel_Menu_AccountDetails.Show();
 
             panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
             panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
@@ -211,6 +215,9 @@ namespace LoginSystem
         private void cuiButton_AccountDetails_Click(object sender, EventArgs e)
         {
             HighlightButtonAndPanel(cuiButton_AccountDetails);
+
+            //panel_Menu_AccountDetails.Height = 360;             panel_Menu_AccountDetails.Width = 963;
+            //panel_Menu_AccountDetails.Visible = true;           panel_Menu_AccountDetails.Show();
         }
 
         private void cuiButton_StorePreferences_Click(object sender, EventArgs e)
@@ -259,17 +266,27 @@ namespace LoginSystem
 
         private void HighlightButtonAndPanel(cuiButton activeButton)
         {
-            buttonPanelMap = new Dictionary<cuiButton, Panel>
+            buttonBGButtonMap = new Dictionary<cuiButton, Panel>
             {
                 { cuiButton_AccountDetails, panel_bg_AccountDetails },
                 { cuiButton_StorePreferences, panel_bg_StorePreferences },
-                { cuiButton_FamilyManagement, panel_bg_FamilyManagement },
+                { cuiButton_FamilyManagement, panel_bg_FamilyManagement },  
                 { cuiButton_LanguagePreferences, panel_bg_LanguagePreferences },
                 { cuiButton_CookiesBrowsing, panel_bg_CookiesBrowsing },
                 { cuiButton_NotificationSetting, panel_bg_NotificationSetting }
             };
 
-            foreach (var pair in buttonPanelMap)
+            buttonMenuPanelMap = new Dictionary<cuiButton, Panel>
+            {
+                { cuiButton_AccountDetails, panel_Menu_AccountDetails },
+                { cuiButton_StorePreferences, panel_Menu_StorePreferences },
+                { cuiButton_FamilyManagement, panel_Menu_FamilyManagement },
+                { cuiButton_LanguagePreferences, panel_Menu_LanguagePreferences },
+                { cuiButton_CookiesBrowsing, panel_Menu_CookiesBrowsing },
+                { cuiButton_NotificationSetting, panel_Menu_NotificationSetting }
+            };
+
+            foreach (var pair in buttonBGButtonMap)
             {
                 pair.Key.NormalBackground = (pair.Key == activeButton)
                     ? Color.FromArgb(33, 60, 88)
@@ -277,7 +294,16 @@ namespace LoginSystem
                 pair.Value.BackColor = (pair.Key == activeButton)
                     ? Color.FromArgb(26, 159, 255)
                     : Color.FromArgb(27, 40, 56);
+
+                foreach (var panel in buttonMenuPanelMap.Values)
+                {
+                    //bool isActive = buttonMenuPanelMap[activeButton] == panel;
+                    panel.Height = (buttonMenuPanelMap[activeButton] == panel) ? 292 : 0;
+                    panel.Width = (buttonMenuPanelMap[activeButton] == panel) ? 722 : 0;
+                }
             }
+
+
         }
 
         
