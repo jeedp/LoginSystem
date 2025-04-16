@@ -8,7 +8,7 @@ using CuoreUI.Controls;
 
 namespace LoginSystem
 {
-    public partial class PersonalInformationProfile: Form
+    public partial class MainMenuForm: Form
     {
         // dragging form
         private bool _mouseDown;
@@ -22,13 +22,15 @@ namespace LoginSystem
 
 
 
-        public PersonalInformationProfile()
+        public MainMenuForm()
         {
             InitializeComponent();
         }
 
         private void PersonalInformationProfile_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentDBDataSet.Students' table. You can move, or remove it, as needed.
+            this.studentsTableAdapter.Fill(this.studentDBDataSet.Students);
             this.Panel_Title.MouseDown += this.MouseDown;
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;

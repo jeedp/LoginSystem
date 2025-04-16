@@ -1,6 +1,6 @@
 ﻿namespace LoginSystem
 {
-    partial class PersonalInformationProfile
+    partial class MainMenuForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonalInformationProfile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.cuiButton_Help = new CuoreUI.Controls.cuiButton();
             this.cuiButton_Games = new CuoreUI.Controls.cuiButton();
@@ -74,6 +74,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel_Menu_FamilyManagement = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -125,6 +126,7 @@
             this.panel_FullName.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_Menu_FamilyManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -864,6 +866,7 @@
             // panel_Menu_FamilyManagement
             // 
             this.panel_Menu_FamilyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_FamilyManagement.Controls.Add(this.dataGridView1);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel1);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel12);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel11);
@@ -881,6 +884,21 @@
             this.panel_Menu_FamilyManagement.Name = "panel_Menu_FamilyManagement";
             this.panel_Menu_FamilyManagement.Size = new System.Drawing.Size(963, 360);
             this.panel_Menu_FamilyManagement.TabIndex = 37;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(618, 120);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(216, 99);
+            this.dataGridView1.TabIndex = 53;
             // 
             // panel1
             // 
@@ -1496,7 +1514,7 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Notification Setting";
             // 
-            // PersonalInformationProfile
+            // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1521,7 +1539,7 @@
             this.Controls.Add(this.panel_bg_StorePreferences);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "PersonalInformationProfile";
+            this.Name = "MainMenuForm";
             this.Load += new System.EventHandler(this.PersonalInformationProfile_Load);
             this.Panel_Title.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1540,6 +1558,7 @@
             this.panel4.PerformLayout();
             this.panel_Menu_FamilyManagement.ResumeLayout(false);
             this.panel_Menu_FamilyManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
@@ -1668,5 +1687,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

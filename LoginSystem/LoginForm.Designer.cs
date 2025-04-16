@@ -1,6 +1,6 @@
 ﻿namespace LoginSystem
 {
-    partial class LoginSystem
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginSystem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.button_Exit = new System.Windows.Forms.Button();
             this.textBox_AccountName = new System.Windows.Forms.TextBox();
@@ -500,7 +500,7 @@
             this.panel_ErrorPassword.TabIndex = 29;
             this.panel_ErrorPassword.Visible = false;
             // 
-            // LoginSystem
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -531,7 +531,7 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "LoginSystem";
+            this.Name = "LoginForm";
             this.Load += new System.EventHandler(this.LoginSystem_Load);
             this.Panel_Title.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_SteamLogo)).EndInit();

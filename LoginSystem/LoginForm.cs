@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace LoginSystem
 {
-    public partial class LoginSystem: Form
+    public partial class LoginForm: Form
     {
         // dragging form
         private bool mouseDown;
@@ -26,7 +26,7 @@ namespace LoginSystem
 
 
 
-        public LoginSystem()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -60,7 +60,7 @@ namespace LoginSystem
                 //MessageBox.Show("Login successful!");
                 
                 this.Hide(); 
-                PersonalInformationProfile profileForm = new PersonalInformationProfile();
+                MainMenuForm profileForm = new MainMenuForm();
                 profileForm.Show(); 
             }
             else
