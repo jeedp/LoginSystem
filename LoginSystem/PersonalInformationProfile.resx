@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cuiButton_CantSignIn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cuiButton_Steam.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAAmZJREFUOE+9lFlPFEEUhdHwA9wSlShLRAbZFUSQGUdA9k1ARAeVRQNGH0SMwSDY
+        DAAACwwBP0AiyAAAAmZJREFUOE+9lFlPFEEUhdHwA9wSlShLRAbZFUSQGUdA9k1ARAeVRQNGH0SMwSDY
         wMBAV3XLdDVBqobEXycB/QPoyzG3cdrpnkGf9CQn6VSqvtxzb1VnZf1PaZp2nMd3yvR4opNM37Tm3/dX
         xWz7NBNynQm5x4VCqplQu9xSa2tbWyf95zKK24nbzFL7fhDZsBOOHbCl9nWhQv7zHumWDDOhDvwgPb6N
         oUdPceNWK4JNnXj2YuYXWH4/EkoRmFDf/DAuJK7WhVFSVYcHo5PoHx5FbmEZeu89divNGJ9ZkqXDFMan

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
+using System.Windows.Forms;
+using CuoreUI.Controls;
 
 
 namespace LoginSystem
@@ -15,8 +11,13 @@ namespace LoginSystem
     public partial class PersonalInformationProfile: Form
     {
         // dragging form
-        private bool mouseDown;
-        private Point lastLocation;
+        private bool _mouseDown;
+        private Point _lastLocation;
+
+        private string filePath = "userdata.txt";
+        private Dictionary<cuiButton, Panel> buttonPanelMap;
+
+
 
         public PersonalInformationProfile()
         {
@@ -37,36 +38,45 @@ namespace LoginSystem
             textBox_Age.TextChanged += HideErrorMsg;
             comboBox_Gender.TextChanged += HideErrorMsg;
 
-            //panel_AccountDetails.MouseEnter += PanelMouseHoverEnter;
-            //panel_AccountDetails.MouseLeave += PanelMouseHoverLeave;
+            //panel_bg_AccountDetails.BackColor = Color.FromArgb(27, 40, 56);
+            //panel_bg_AccountDetails.BackColor = Color.FromArgb(27, 40, 56);
 
-            //panel5.MouseEnter += PanelMouseHoverEnter;
-            //panel5.MouseLeave += PanelMouseHoverLeave;
+            panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
+            panel_bg_StorePreferences.BackColor = Color.FromArgb(27, 40, 56);
 
-            //panel6.MouseEnter += PanelMouseHoverEnter;
-            //panel6.MouseLeave += PanelMouseHoverLeave;
+            panel_bg_FamilyManagement.BackColor = Color.FromArgb(27, 40, 56);
+            panel_bg_FamilyManagement.BackColor = Color.FromArgb(27, 40, 56);
 
-            //panel7.MouseEnter += PanelMouseHoverEnter;
-            //panel7.MouseLeave += PanelMouseHoverLeave;
+            panel_bg_LanguagePreferences.BackColor = Color.FromArgb(27, 40, 56);
+            panel_bg_LanguagePreferences.BackColor = Color.FromArgb(27, 40, 56);
 
-            //panel8.MouseEnter += PanelMouseHoverEnter;
-            //panel8.MouseLeave += PanelMouseHoverLeave;
+            panel_bg_CookiesBrowsing.BackColor = Color.FromArgb(27, 40, 56);
+            panel_bg_CookiesBrowsing.BackColor = Color.FromArgb(27, 40, 56);
 
-            //panel9.MouseEnter += PanelMouseHoverEnter;
-            //panel9.MouseLeave += PanelMouseHoverLeave;
+            panel_bg_NotificationSetting.BackColor = Color.FromArgb(27, 40, 56);
+            panel_bg_NotificationSetting.BackColor = Color.FromArgb(27, 40, 56);
 
-            string filePath = "userdata.txt";
+
+
+
 
             if (File.Exists(filePath))
             {
-                string savedData = File.ReadAllText(filePath);
-                textBox_Output.Text = savedData;
+                //string savedData = File.ReadAllText(filePath);
+                textBox_Output.Text = File.ReadAllText(filePath);
             }
         }
 
 
 
 
+
+
+
+
+
+
+        // FORM CONTROL
 
         private void button_Exit_Click(object sender, EventArgs e)
         {
@@ -77,6 +87,38 @@ namespace LoginSystem
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private new void MouseDown(object sender, MouseEventArgs e)
+        {
+            _mouseDown = true;
+            _lastLocation = e.Location;
+        }
+
+        private new void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_mouseDown)
+            {
+                this.Location = new Point(
+                    (this.Location.X - _lastLocation.X) + e.X, (this.Location.Y - _lastLocation.Y) + e.Y);
+                this.Update();
+            }
+        }
+
+        private new void MouseUp(object sender, MouseEventArgs e)
+        {
+            _mouseDown = false;
+        }
+
+
+
+
+
+
+
+
+
+
+        // ACCOUNT DETAILS
 
         private void textBox_FullName_TextChanged(object sender, EventArgs e)
         {
@@ -101,11 +143,7 @@ namespace LoginSystem
                 e.Handled = true; // Block the key press
             }
         }
-
-
-
-
-
+        
         private void cuiButton_Save_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(textBox_FullName.Text) &&
@@ -165,12 +203,50 @@ namespace LoginSystem
             }
         }
 
-        
+
+
+
+        // FAMILY MANAGEMENT
+
+        private void cuiButton_AccountDetails_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_AccountDetails);
+        }
+
+        private void cuiButton_StorePreferences_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_StorePreferences);
+        }
+
+        private void cuiButton_FamilyManagement_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_FamilyManagement);
+        }
+
+        private void cuiButton_LanguagePreferences_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_LanguagePreferences);
+        }
+
+        private void cuiButton_CookiesBrowsing_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_CookiesBrowsing);
+        }
+
+        private void cuiButton_NotificationSetting_Click(object sender, EventArgs e)
+        {
+            HighlightButtonAndPanel(cuiButton_NotificationSetting);
+        }
 
 
 
 
 
+
+
+
+
+        // HELPER METHODS
 
         private void HideErrorMsg(object sender, EventArgs e)
         {
@@ -181,51 +257,38 @@ namespace LoginSystem
             label_SavedSuccessfully.Visible = false;
         }
 
-
-
-
-
-
-
-
-        private void PanelMouseHoverEnter(object sender, EventArgs e)
+        private void HighlightButtonAndPanel(cuiButton activeButton)
         {
-            panel1.BackColor = Color.FromArgb(26, 159, 255); // Or any color you like
-        }
-
-        private void PanelMouseHoverLeave(object sender, EventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(27, 40, 56); // Resets to default
-        }
-
-
-
-
-
-
-
-
-
-        private void MouseDown(object sender, MouseEventArgs e)
-        {
-            mouseDown = true;
-            lastLocation = e.Location;
-        }
-
-        private void MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mouseDown)
+            buttonPanelMap = new Dictionary<cuiButton, Panel>
             {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
-                this.Update();
+                { cuiButton_AccountDetails, panel_bg_AccountDetails },
+                { cuiButton_StorePreferences, panel_bg_StorePreferences },
+                { cuiButton_FamilyManagement, panel_bg_FamilyManagement },
+                { cuiButton_LanguagePreferences, panel_bg_LanguagePreferences },
+                { cuiButton_CookiesBrowsing, panel_bg_CookiesBrowsing },
+                { cuiButton_NotificationSetting, panel_bg_NotificationSetting }
+            };
+
+            foreach (var pair in buttonPanelMap)
+            {
+                pair.Key.NormalBackground = (pair.Key == activeButton)
+                    ? Color.FromArgb(33, 60, 88)
+                    : Color.FromArgb(27, 40, 56);
+                pair.Value.BackColor = (pair.Key == activeButton)
+                    ? Color.FromArgb(26, 159, 255)
+                    : Color.FromArgb(27, 40, 56);
             }
         }
 
-        private void MouseUp(object sender, MouseEventArgs e)
-        {
-            mouseDown = false;
-        }
+        
+
+
+
+
+
+
+
+        
 
     }
 }
