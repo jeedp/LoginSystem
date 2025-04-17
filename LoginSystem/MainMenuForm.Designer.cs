@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.Panel_Title = new System.Windows.Forms.Panel();
             this.cuiButton_Help = new CuoreUI.Controls.cuiButton();
@@ -44,7 +45,7 @@
             this.cuiGradientBorder_UserAccount2 = new CuoreUI.Controls.cuiGradientBorder();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_SteamID = new System.Windows.Forms.Label();
             this.label_UserAccount = new System.Windows.Forms.Label();
             this.cuiGradientBorder3 = new CuoreUI.Controls.cuiGradientBorder();
             this.cuiGradientBorder1 = new CuoreUI.Controls.cuiGradientBorder();
@@ -54,44 +55,50 @@
             this.cuiResizeGrip = new CuoreUI.Controls.cuiResizeGrip();
             this.panel_Menu_AccountDetails = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox_Output = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label_SavedSuccessfully = new System.Windows.Forms.Label();
-            this.label_ErrorMsg = new System.Windows.Forms.Label();
-            this.panel_Gender = new System.Windows.Forms.Panel();
+            this.textBox_AD_Output = new System.Windows.Forms.TextBox();
+            this.label_AD_SavedInfo = new System.Windows.Forms.Label();
+            this.label_AD_SavedSuccessfully = new System.Windows.Forms.Label();
+            this.label_AD_ErrorMsg = new System.Windows.Forms.Label();
+            this.panel_AD_Gender = new System.Windows.Forms.Panel();
             this.comboBox_Gender = new System.Windows.Forms.ComboBox();
-            this.panel_Age = new System.Windows.Forms.Panel();
-            this.textBox_Age = new System.Windows.Forms.TextBox();
-            this.panel_FullName = new System.Windows.Forms.Panel();
-            this.textBox_FullName = new System.Windows.Forms.TextBox();
+            this.panel_AD_Age = new System.Windows.Forms.Panel();
+            this.textBox_AD_Age = new System.Windows.Forms.TextBox();
+            this.panel_AD_FullName = new System.Windows.Forms.Panel();
+            this.textBox_AD_FullName = new System.Windows.Forms.TextBox();
             this.cuiButton_Save = new CuoreUI.Controls.cuiButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label_Password = new System.Windows.Forms.Label();
-            this.panel_ErrorGender = new System.Windows.Forms.Panel();
-            this.panel_ErrorAge = new System.Windows.Forms.Panel();
-            this.panel_ErrorFullName = new System.Windows.Forms.Panel();
+            this.label_AD_Gender = new System.Windows.Forms.Label();
+            this.label_AD_Age = new System.Windows.Forms.Label();
+            this.label_AD_FullName = new System.Windows.Forms.Label();
+            this.panel_AD_ErrorGender = new System.Windows.Forms.Panel();
+            this.panel_AD_ErrorAge = new System.Windows.Forms.Panel();
+            this.panel_AD_ErrorFullName = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_AD_AccountInformation = new System.Windows.Forms.Label();
             this.panel_Menu_FamilyManagement = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cuiButton2 = new CuoreUI.Controls.cuiButton();
+            this.dataGridView_StudentsList = new System.Windows.Forms.DataGridView();
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentDBDataSet = new LoginSystem.StudentDBDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_FM_FirstName = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_FM_StudentID = new System.Windows.Forms.TextBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.button_Expand = new System.Windows.Forms.Button();
+            this.label_FM_StudentManagement = new System.Windows.Forms.Label();
             this.cuiButton_AccountDetails = new CuoreUI.Controls.cuiButton();
             this.panel_bg_AccountDetails = new System.Windows.Forms.Panel();
             this.panel_bg_StorePreferences = new System.Windows.Forms.Panel();
@@ -116,20 +123,37 @@
             this.panel_Menu_NotificationSetting = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.studentsTableAdapter = new LoginSystem.StudentDBDataSetTableAdapters.StudentsTableAdapter();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.textBox_FM_LastName = new System.Windows.Forms.TextBox();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.Panel_Title.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_MenuBottom.SuspendLayout();
             this.panel_Menu_AccountDetails.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel_Gender.SuspendLayout();
-            this.panel_Age.SuspendLayout();
-            this.panel_FullName.SuspendLayout();
+            this.panel_AD_Gender.SuspendLayout();
+            this.panel_AD_Age.SuspendLayout();
+            this.panel_AD_FullName.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_Menu_FamilyManagement.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel_bg_AccountDetails.SuspendLayout();
             this.panel_bg_StorePreferences.SuspendLayout();
@@ -145,6 +169,10 @@
             this.panel8.SuspendLayout();
             this.panel_Menu_NotificationSetting.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -454,7 +482,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.label_SteamID);
             this.panel3.Controls.Add(this.label_UserAccount);
             this.panel3.Controls.Add(this.cuiGradientBorder3);
             this.panel3.Controls.Add(this.cuiGradientBorder1);
@@ -481,19 +509,19 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "Home > Account";
             // 
-            // label1
+            // label_SteamID
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(64)))), ((int)(((byte)(93)))));
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(33, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Steam ID: 76561198389138554";
+            this.label_SteamID.AutoSize = true;
+            this.label_SteamID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(64)))), ((int)(((byte)(93)))));
+            this.label_SteamID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_SteamID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.label_SteamID.Image = ((System.Drawing.Image)(resources.GetObject("label_SteamID.Image")));
+            this.label_SteamID.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_SteamID.Location = new System.Drawing.Point(33, 115);
+            this.label_SteamID.Name = "label_SteamID";
+            this.label_SteamID.Size = new System.Drawing.Size(213, 20);
+            this.label_SteamID.TabIndex = 10;
+            this.label_SteamID.Text = "Steam ID: 76561198389138554";
             // 
             // label_UserAccount
             // 
@@ -598,18 +626,18 @@
             // 
             this.panel_Menu_AccountDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.panel_Menu_AccountDetails.Controls.Add(this.panel10);
-            this.panel_Menu_AccountDetails.Controls.Add(this.label_SavedSuccessfully);
-            this.panel_Menu_AccountDetails.Controls.Add(this.label_ErrorMsg);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_Gender);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_Age);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_FullName);
+            this.panel_Menu_AccountDetails.Controls.Add(this.label_AD_SavedSuccessfully);
+            this.panel_Menu_AccountDetails.Controls.Add(this.label_AD_ErrorMsg);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_Gender);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_Age);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_FullName);
             this.panel_Menu_AccountDetails.Controls.Add(this.cuiButton_Save);
-            this.panel_Menu_AccountDetails.Controls.Add(this.label3);
-            this.panel_Menu_AccountDetails.Controls.Add(this.label2);
-            this.panel_Menu_AccountDetails.Controls.Add(this.label_Password);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_ErrorGender);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_ErrorAge);
-            this.panel_Menu_AccountDetails.Controls.Add(this.panel_ErrorFullName);
+            this.panel_Menu_AccountDetails.Controls.Add(this.label_AD_Gender);
+            this.panel_Menu_AccountDetails.Controls.Add(this.label_AD_Age);
+            this.panel_Menu_AccountDetails.Controls.Add(this.label_AD_FullName);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_ErrorGender);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_ErrorAge);
+            this.panel_Menu_AccountDetails.Controls.Add(this.panel_AD_ErrorFullName);
             this.panel_Menu_AccountDetails.Controls.Add(this.panel4);
             this.panel_Menu_AccountDetails.Location = new System.Drawing.Point(330, 298);
             this.panel_Menu_AccountDetails.Name = "panel_Menu_AccountDetails";
@@ -618,72 +646,72 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox_Output);
-            this.panel10.Controls.Add(this.label4);
+            this.panel10.Controls.Add(this.textBox_AD_Output);
+            this.panel10.Controls.Add(this.label_AD_SavedInfo);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel10.Location = new System.Drawing.Point(-350, 38);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(350, 0);
             this.panel10.TabIndex = 36;
             // 
-            // textBox_Output
+            // textBox_AD_Output
             // 
-            this.textBox_Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_Output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_Output.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_Output.ForeColor = System.Drawing.Color.White;
-            this.textBox_Output.Location = new System.Drawing.Point(19, 28);
-            this.textBox_Output.Multiline = true;
-            this.textBox_Output.Name = "textBox_Output";
-            this.textBox_Output.Size = new System.Drawing.Size(290, 282);
-            this.textBox_Output.TabIndex = 37;
+            this.textBox_AD_Output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_AD_Output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_AD_Output.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_AD_Output.ForeColor = System.Drawing.Color.White;
+            this.textBox_AD_Output.Location = new System.Drawing.Point(19, 28);
+            this.textBox_AD_Output.Multiline = true;
+            this.textBox_AD_Output.Name = "textBox_AD_Output";
+            this.textBox_AD_Output.Size = new System.Drawing.Size(290, 282);
+            this.textBox_AD_Output.TabIndex = 37;
             // 
-            // label4
+            // label_AD_SavedInfo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label4.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label4.Location = new System.Drawing.Point(3, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 19);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "SAVED INFO";
+            this.label_AD_SavedInfo.AutoSize = true;
+            this.label_AD_SavedInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_SavedInfo.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_SavedInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label_AD_SavedInfo.Location = new System.Drawing.Point(3, 5);
+            this.label_AD_SavedInfo.Name = "label_AD_SavedInfo";
+            this.label_AD_SavedInfo.Size = new System.Drawing.Size(89, 19);
+            this.label_AD_SavedInfo.TabIndex = 37;
+            this.label_AD_SavedInfo.Text = "SAVED INFO";
             // 
-            // label_SavedSuccessfully
+            // label_AD_SavedSuccessfully
             // 
-            this.label_SavedSuccessfully.AutoSize = true;
-            this.label_SavedSuccessfully.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label_SavedSuccessfully.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_SavedSuccessfully.ForeColor = System.Drawing.Color.White;
-            this.label_SavedSuccessfully.Location = new System.Drawing.Point(204, 287);
-            this.label_SavedSuccessfully.Name = "label_SavedSuccessfully";
-            this.label_SavedSuccessfully.Size = new System.Drawing.Size(138, 20);
-            this.label_SavedSuccessfully.TabIndex = 35;
-            this.label_SavedSuccessfully.Text = "Successfully saved!";
-            this.label_SavedSuccessfully.Visible = false;
+            this.label_AD_SavedSuccessfully.AutoSize = true;
+            this.label_AD_SavedSuccessfully.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_SavedSuccessfully.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_SavedSuccessfully.ForeColor = System.Drawing.Color.White;
+            this.label_AD_SavedSuccessfully.Location = new System.Drawing.Point(204, 287);
+            this.label_AD_SavedSuccessfully.Name = "label_AD_SavedSuccessfully";
+            this.label_AD_SavedSuccessfully.Size = new System.Drawing.Size(138, 20);
+            this.label_AD_SavedSuccessfully.TabIndex = 35;
+            this.label_AD_SavedSuccessfully.Text = "Successfully saved!";
+            this.label_AD_SavedSuccessfully.Visible = false;
             // 
-            // label_ErrorMsg
+            // label_AD_ErrorMsg
             // 
-            this.label_ErrorMsg.AutoSize = true;
-            this.label_ErrorMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label_ErrorMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ErrorMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.label_ErrorMsg.Location = new System.Drawing.Point(73, 287);
-            this.label_ErrorMsg.Name = "label_ErrorMsg";
-            this.label_ErrorMsg.Size = new System.Drawing.Size(419, 20);
-            this.label_ErrorMsg.TabIndex = 30;
-            this.label_ErrorMsg.Text = "Please check your full name, age, and gender and try again.";
-            this.label_ErrorMsg.Visible = false;
+            this.label_AD_ErrorMsg.AutoSize = true;
+            this.label_AD_ErrorMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_ErrorMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_ErrorMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.label_AD_ErrorMsg.Location = new System.Drawing.Point(73, 287);
+            this.label_AD_ErrorMsg.Name = "label_AD_ErrorMsg";
+            this.label_AD_ErrorMsg.Size = new System.Drawing.Size(419, 20);
+            this.label_AD_ErrorMsg.TabIndex = 30;
+            this.label_AD_ErrorMsg.Text = "Please check your full name, age, and gender and try again.";
+            this.label_AD_ErrorMsg.Visible = false;
             // 
-            // panel_Gender
+            // panel_AD_Gender
             // 
-            this.panel_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_Gender.Controls.Add(this.comboBox_Gender);
-            this.panel_Gender.Location = new System.Drawing.Point(32, 220);
-            this.panel_Gender.Name = "panel_Gender";
-            this.panel_Gender.Size = new System.Drawing.Size(256, 49);
-            this.panel_Gender.TabIndex = 28;
+            this.panel_AD_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_AD_Gender.Controls.Add(this.comboBox_Gender);
+            this.panel_AD_Gender.Location = new System.Drawing.Point(32, 220);
+            this.panel_AD_Gender.Name = "panel_AD_Gender";
+            this.panel_AD_Gender.Size = new System.Drawing.Size(256, 49);
+            this.panel_AD_Gender.TabIndex = 28;
             // 
             // comboBox_Gender
             // 
@@ -700,46 +728,46 @@
             this.comboBox_Gender.Size = new System.Drawing.Size(253, 28);
             this.comboBox_Gender.TabIndex = 31;
             // 
-            // panel_Age
+            // panel_AD_Age
             // 
-            this.panel_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_Age.Controls.Add(this.textBox_Age);
-            this.panel_Age.Location = new System.Drawing.Point(32, 143);
-            this.panel_Age.Name = "panel_Age";
-            this.panel_Age.Size = new System.Drawing.Size(256, 49);
-            this.panel_Age.TabIndex = 28;
+            this.panel_AD_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_AD_Age.Controls.Add(this.textBox_AD_Age);
+            this.panel_AD_Age.Location = new System.Drawing.Point(32, 143);
+            this.panel_AD_Age.Name = "panel_AD_Age";
+            this.panel_AD_Age.Size = new System.Drawing.Size(256, 49);
+            this.panel_AD_Age.TabIndex = 28;
             // 
-            // textBox_Age
+            // textBox_AD_Age
             // 
-            this.textBox_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_Age.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_Age.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_Age.ForeColor = System.Drawing.Color.White;
-            this.textBox_Age.Location = new System.Drawing.Point(16, 14);
-            this.textBox_Age.Name = "textBox_Age";
-            this.textBox_Age.Size = new System.Drawing.Size(220, 21);
-            this.textBox_Age.TabIndex = 2;
-            this.textBox_Age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Age_KeyPress);
+            this.textBox_AD_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_AD_Age.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_AD_Age.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_AD_Age.ForeColor = System.Drawing.Color.White;
+            this.textBox_AD_Age.Location = new System.Drawing.Point(16, 14);
+            this.textBox_AD_Age.Name = "textBox_AD_Age";
+            this.textBox_AD_Age.Size = new System.Drawing.Size(220, 21);
+            this.textBox_AD_Age.TabIndex = 2;
+            this.textBox_AD_Age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
-            // panel_FullName
+            // panel_AD_FullName
             // 
-            this.panel_FullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_FullName.Controls.Add(this.textBox_FullName);
-            this.panel_FullName.Location = new System.Drawing.Point(32, 66);
-            this.panel_FullName.Name = "panel_FullName";
-            this.panel_FullName.Size = new System.Drawing.Size(515, 49);
-            this.panel_FullName.TabIndex = 28;
+            this.panel_AD_FullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_AD_FullName.Controls.Add(this.textBox_AD_FullName);
+            this.panel_AD_FullName.Location = new System.Drawing.Point(32, 66);
+            this.panel_AD_FullName.Name = "panel_AD_FullName";
+            this.panel_AD_FullName.Size = new System.Drawing.Size(515, 49);
+            this.panel_AD_FullName.TabIndex = 28;
             // 
-            // textBox_FullName
+            // textBox_AD_FullName
             // 
-            this.textBox_FullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_FullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_FullName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_FullName.ForeColor = System.Drawing.Color.White;
-            this.textBox_FullName.Location = new System.Drawing.Point(16, 14);
-            this.textBox_FullName.Name = "textBox_FullName";
-            this.textBox_FullName.Size = new System.Drawing.Size(484, 21);
-            this.textBox_FullName.TabIndex = 2;
+            this.textBox_AD_FullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_AD_FullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_AD_FullName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_AD_FullName.ForeColor = System.Drawing.Color.White;
+            this.textBox_AD_FullName.Location = new System.Drawing.Point(16, 14);
+            this.textBox_AD_FullName.Name = "textBox_AD_FullName";
+            this.textBox_AD_FullName.Size = new System.Drawing.Size(484, 21);
+            this.textBox_AD_FullName.TabIndex = 2;
             // 
             // cuiButton_Save
             // 
@@ -778,183 +806,299 @@
             this.cuiButton_Save.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton_Save.Click += new System.EventHandler(this.cuiButton_Save_Click);
             // 
-            // label3
+            // label_AD_Gender
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label3.Location = new System.Drawing.Point(29, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 19);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "GENDER";
+            this.label_AD_Gender.AutoSize = true;
+            this.label_AD_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_Gender.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_Gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label_AD_Gender.Location = new System.Drawing.Point(29, 197);
+            this.label_AD_Gender.Name = "label_AD_Gender";
+            this.label_AD_Gender.Size = new System.Drawing.Size(63, 19);
+            this.label_AD_Gender.TabIndex = 33;
+            this.label_AD_Gender.Text = "GENDER";
             // 
-            // label2
+            // label_AD_Age
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label2.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label2.Location = new System.Drawing.Point(29, 120);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 19);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "AGE";
+            this.label_AD_Age.AutoSize = true;
+            this.label_AD_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_Age.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_Age.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label_AD_Age.Location = new System.Drawing.Point(29, 120);
+            this.label_AD_Age.Name = "label_AD_Age";
+            this.label_AD_Age.Size = new System.Drawing.Size(36, 19);
+            this.label_AD_Age.TabIndex = 32;
+            this.label_AD_Age.Text = "AGE";
             // 
-            // label_Password
+            // label_AD_FullName
             // 
-            this.label_Password.AutoSize = true;
-            this.label_Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label_Password.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label_Password.Location = new System.Drawing.Point(27, 43);
-            this.label_Password.Name = "label_Password";
-            this.label_Password.Size = new System.Drawing.Size(85, 19);
-            this.label_Password.TabIndex = 13;
-            this.label_Password.Text = "FULL NAME";
+            this.label_AD_FullName.AutoSize = true;
+            this.label_AD_FullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_AD_FullName.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_FullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label_AD_FullName.Location = new System.Drawing.Point(27, 43);
+            this.label_AD_FullName.Name = "label_AD_FullName";
+            this.label_AD_FullName.Size = new System.Drawing.Size(85, 19);
+            this.label_AD_FullName.TabIndex = 13;
+            this.label_AD_FullName.Text = "FULL NAME";
             // 
-            // panel_ErrorGender
+            // panel_AD_ErrorGender
             // 
-            this.panel_ErrorGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_ErrorGender.Location = new System.Drawing.Point(31, 219);
-            this.panel_ErrorGender.Name = "panel_ErrorGender";
-            this.panel_ErrorGender.Size = new System.Drawing.Size(258, 52);
-            this.panel_ErrorGender.TabIndex = 31;
-            this.panel_ErrorGender.Visible = false;
+            this.panel_AD_ErrorGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_AD_ErrorGender.Location = new System.Drawing.Point(31, 219);
+            this.panel_AD_ErrorGender.Name = "panel_AD_ErrorGender";
+            this.panel_AD_ErrorGender.Size = new System.Drawing.Size(258, 52);
+            this.panel_AD_ErrorGender.TabIndex = 31;
+            this.panel_AD_ErrorGender.Visible = false;
             // 
-            // panel_ErrorAge
+            // panel_AD_ErrorAge
             // 
-            this.panel_ErrorAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_ErrorAge.Location = new System.Drawing.Point(31, 142);
-            this.panel_ErrorAge.Name = "panel_ErrorAge";
-            this.panel_ErrorAge.Size = new System.Drawing.Size(258, 52);
-            this.panel_ErrorAge.TabIndex = 30;
-            this.panel_ErrorAge.Visible = false;
+            this.panel_AD_ErrorAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_AD_ErrorAge.Location = new System.Drawing.Point(31, 142);
+            this.panel_AD_ErrorAge.Name = "panel_AD_ErrorAge";
+            this.panel_AD_ErrorAge.Size = new System.Drawing.Size(258, 52);
+            this.panel_AD_ErrorAge.TabIndex = 30;
+            this.panel_AD_ErrorAge.Visible = false;
             // 
-            // panel_ErrorFullName
+            // panel_AD_ErrorFullName
             // 
-            this.panel_ErrorFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_ErrorFullName.Location = new System.Drawing.Point(31, 65);
-            this.panel_ErrorFullName.Name = "panel_ErrorFullName";
-            this.panel_ErrorFullName.Size = new System.Drawing.Size(517, 52);
-            this.panel_ErrorFullName.TabIndex = 29;
-            this.panel_ErrorFullName.Visible = false;
+            this.panel_AD_ErrorFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_AD_ErrorFullName.Location = new System.Drawing.Point(31, 65);
+            this.panel_AD_ErrorFullName.Name = "panel_AD_ErrorFullName";
+            this.panel_AD_ErrorFullName.Size = new System.Drawing.Size(517, 52);
+            this.panel_AD_ErrorFullName.TabIndex = 29;
+            this.panel_AD_ErrorFullName.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
-            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label_AD_AccountInformation);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(0, 38);
             this.panel4.TabIndex = 9;
             // 
-            // label5
+            // label_AD_AccountInformation
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
-            this.label5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(27, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 19);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Account Information";
+            this.label_AD_AccountInformation.AutoSize = true;
+            this.label_AD_AccountInformation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label_AD_AccountInformation.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_AD_AccountInformation.ForeColor = System.Drawing.Color.White;
+            this.label_AD_AccountInformation.Location = new System.Drawing.Point(27, 10);
+            this.label_AD_AccountInformation.Name = "label_AD_AccountInformation";
+            this.label_AD_AccountInformation.Size = new System.Drawing.Size(145, 19);
+            this.label_AD_AccountInformation.TabIndex = 38;
+            this.label_AD_AccountInformation.Text = "Account Information";
             // 
             // panel_Menu_FamilyManagement
             // 
             this.panel_Menu_FamilyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.panel_Menu_FamilyManagement.Controls.Add(this.dataGridView1);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel9);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel16);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel14);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel17);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel18);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.cuiButton2);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel19);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.dataGridView_StudentsList);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel20);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.panel21);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel1);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.label17);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel12);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.label18);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel11);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.label19);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel15);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label12);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label13);
-            this.panel_Menu_FamilyManagement.Controls.Add(this.panel9);
             this.panel_Menu_FamilyManagement.Controls.Add(this.cuiButton1);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label14);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label15);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label16);
-            this.panel_Menu_FamilyManagement.Controls.Add(this.panel14);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel13);
             this.panel_Menu_FamilyManagement.Location = new System.Drawing.Point(330, 298);
             this.panel_Menu_FamilyManagement.Name = "panel_Menu_FamilyManagement";
             this.panel_Menu_FamilyManagement.Size = new System.Drawing.Size(963, 360);
             this.panel_Menu_FamilyManagement.TabIndex = 37;
             // 
-            // dataGridView1
+            // cuiButton2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(618, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(216, 99);
-            this.dataGridView1.TabIndex = 53;
+            this.cuiButton2.CheckButton = false;
+            this.cuiButton2.Checked = false;
+            this.cuiButton2.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton2.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton2.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton2.Content = "Delete";
+            this.cuiButton2.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.cuiButton2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton2.ForeColor = System.Drawing.Color.White;
+            this.cuiButton2.HoverBackground = System.Drawing.Color.Red;
+            this.cuiButton2.HoveredImageTint = System.Drawing.Color.White;
+            this.cuiButton2.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton2.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.Image = null;
+            this.cuiButton2.ImageAutoCenter = true;
+            this.cuiButton2.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton2.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton2.Location = new System.Drawing.Point(258, 310);
+            this.cuiButton2.Margin = new System.Windows.Forms.Padding(24, 3, 3, 3);
+            this.cuiButton2.Name = "cuiButton2";
+            this.cuiButton2.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cuiButton2.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton2.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton2.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.OutlineThickness = 1.6F;
+            this.cuiButton2.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton2.PressedForeColor = System.Drawing.Color.White;
+            this.cuiButton2.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton2.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton2.Rounding = new System.Windows.Forms.Padding(2);
+            this.cuiButton2.Size = new System.Drawing.Size(138, 38);
+            this.cuiButton2.TabIndex = 54;
+            this.cuiButton2.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // dataGridView_StudentsList
+            // 
+            this.dataGridView_StudentsList.AllowUserToAddRows = false;
+            this.dataGridView_StudentsList.AllowUserToDeleteRows = false;
+            this.dataGridView_StudentsList.AllowUserToResizeColumns = false;
+            this.dataGridView_StudentsList.AllowUserToResizeRows = false;
+            this.dataGridView_StudentsList.AutoGenerateColumns = false;
+            this.dataGridView_StudentsList.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_StudentsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_StudentsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_StudentsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentIDDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.courseDataGridViewTextBoxColumn});
+            this.dataGridView_StudentsList.DataSource = this.studentsBindingSource;
+            this.dataGridView_StudentsList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridView_StudentsList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView_StudentsList.Location = new System.Drawing.Point(497, 38);
+            this.dataGridView_StudentsList.Name = "dataGridView_StudentsList";
+            this.dataGridView_StudentsList.ReadOnly = true;
+            this.dataGridView_StudentsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_StudentsList.RowHeadersWidth = 51;
+            this.dataGridView_StudentsList.RowTemplate.Height = 24;
+            this.dataGridView_StudentsList.Size = new System.Drawing.Size(466, 322);
+            this.dataGridView_StudentsList.TabIndex = 53;
+            // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ageDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.courseDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "Students";
+            this.studentsBindingSource.DataSource = this.studentDBDataSet;
+            // 
+            // studentDBDataSet
+            // 
+            this.studentDBDataSet.DataSetName = "StudentDBDataSet";
+            this.studentDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Location = new System.Drawing.Point(32, 220);
+            this.panel1.Controls.Add(this.textBox_FM_FirstName);
+            this.panel1.Location = new System.Drawing.Point(32, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 49);
+            this.panel1.Size = new System.Drawing.Size(198, 49);
             this.panel1.TabIndex = 51;
             // 
-            // textBox3
+            // textBox_FM_FirstName
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(16, 14);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 21);
-            this.textBox3.TabIndex = 2;
+            this.textBox_FM_FirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_FirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_FirstName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_FirstName.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_FirstName.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_FirstName.Name = "textBox_FM_FirstName";
+            this.textBox_FM_FirstName.Size = new System.Drawing.Size(162, 21);
+            this.textBox_FM_FirstName.TabIndex = 6;
             // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel12.Location = new System.Drawing.Point(31, 219);
+            this.panel12.Location = new System.Drawing.Point(31, 142);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(258, 52);
+            this.panel12.Size = new System.Drawing.Size(200, 52);
             this.panel12.TabIndex = 52;
             this.panel12.Visible = false;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel11.Controls.Add(this.textBox2);
+            this.panel11.Controls.Add(this.textBox_FM_StudentID);
             this.panel11.Location = new System.Drawing.Point(32, 66);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(256, 49);
+            this.panel11.Size = new System.Drawing.Size(198, 49);
             this.panel11.TabIndex = 49;
             // 
-            // textBox2
+            // textBox_FM_StudentID
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(16, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 21);
-            this.textBox2.TabIndex = 2;
+            this.textBox_FM_StudentID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_StudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_StudentID.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_StudentID.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_StudentID.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_StudentID.MaxLength = 5;
+            this.textBox_FM_StudentID.Name = "textBox_FM_StudentID";
+            this.textBox_FM_StudentID.Size = new System.Drawing.Size(162, 21);
+            this.textBox_FM_StudentID.TabIndex = 2;
             // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
             this.panel15.Location = new System.Drawing.Point(31, 65);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(258, 52);
+            this.panel15.Size = new System.Drawing.Size(200, 52);
             this.panel15.TabIndex = 50;
             this.panel15.Visible = false;
             // 
@@ -964,7 +1108,7 @@
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(203, 288);
+            this.label12.Location = new System.Drawing.Point(161, 282);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(138, 20);
             this.label12.TabIndex = 47;
@@ -977,32 +1121,12 @@
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.label13.Location = new System.Drawing.Point(72, 288);
+            this.label13.Location = new System.Drawing.Point(30, 282);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(419, 20);
             this.label13.TabIndex = 41;
             this.label13.Text = "Please check your full name, age, and gender and try again.";
             this.label13.Visible = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Location = new System.Drawing.Point(32, 143);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(256, 49);
-            this.panel9.TabIndex = 38;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(16, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 21);
-            this.textBox1.TabIndex = 2;
             // 
             // cuiButton1
             // 
@@ -1012,7 +1136,7 @@
             this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
             this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
             this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton1.Content = "Save";
+            this.cuiButton1.Content = "Update";
             this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.No;
             this.cuiButton1.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuiButton1.ForeColor = System.Drawing.Color.White;
@@ -1024,7 +1148,7 @@
             this.cuiButton1.ImageAutoCenter = true;
             this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.Location = new System.Drawing.Point(144, 310);
+            this.cuiButton1.Location = new System.Drawing.Point(93, 310);
             this.cuiButton1.Name = "cuiButton1";
             this.cuiButton1.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
             this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
@@ -1036,7 +1160,7 @@
             this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
             this.cuiButton1.PressedOutline = System.Drawing.Color.Empty;
             this.cuiButton1.Rounding = new System.Windows.Forms.Padding(2);
-            this.cuiButton1.Size = new System.Drawing.Size(258, 38);
+            this.cuiButton1.Size = new System.Drawing.Size(138, 38);
             this.cuiButton1.TabIndex = 46;
             this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
@@ -1048,9 +1172,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.label14.Location = new System.Drawing.Point(30, 197);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 19);
+            this.label14.Size = new System.Drawing.Size(87, 19);
             this.label14.TabIndex = 45;
-            this.label14.Text = "GENDER";
+            this.label14.Text = "LAST NAME";
             // 
             // label15
             // 
@@ -1060,9 +1184,9 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
             this.label15.Location = new System.Drawing.Point(30, 120);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 19);
+            this.label15.Size = new System.Drawing.Size(90, 19);
             this.label15.TabIndex = 44;
-            this.label15.Text = "AGE";
+            this.label15.Text = "FIRST NAME";
             // 
             // label16
             // 
@@ -1076,36 +1200,42 @@
             this.label16.TabIndex = 36;
             this.label16.Text = "STUDENT ID";
             // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel14.Location = new System.Drawing.Point(31, 142);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(258, 52);
-            this.panel14.TabIndex = 42;
-            this.panel14.Visible = false;
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
-            this.panel13.Controls.Add(this.label6);
+            this.panel13.Controls.Add(this.button_Expand);
+            this.panel13.Controls.Add(this.label_FM_StudentManagement);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(963, 38);
             this.panel13.TabIndex = 9;
             // 
-            // label6
+            // button_Expand
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
-            this.label6.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 19);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Student Management";
+            this.button_Expand.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button_Expand.FlatAppearance.BorderSize = 0;
+            this.button_Expand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Expand.Image = ((System.Drawing.Image)(resources.GetObject("button_Expand.Image")));
+            this.button_Expand.Location = new System.Drawing.Point(920, 0);
+            this.button_Expand.Margin = new System.Windows.Forms.Padding(0);
+            this.button_Expand.Name = "button_Expand";
+            this.button_Expand.Size = new System.Drawing.Size(43, 38);
+            this.button_Expand.TabIndex = 8;
+            this.button_Expand.UseVisualStyleBackColor = true;
+            this.button_Expand.Click += new System.EventHandler(this.button_Expand_Click);
+            // 
+            // label_FM_StudentManagement
+            // 
+            this.label_FM_StudentManagement.AutoSize = true;
+            this.label_FM_StudentManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.label_FM_StudentManagement.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FM_StudentManagement.ForeColor = System.Drawing.Color.White;
+            this.label_FM_StudentManagement.Location = new System.Drawing.Point(26, 10);
+            this.label_FM_StudentManagement.Name = "label_FM_StudentManagement";
+            this.label_FM_StudentManagement.Size = new System.Drawing.Size(152, 19);
+            this.label_FM_StudentManagement.TabIndex = 7;
+            this.label_FM_StudentManagement.Text = "Student Management";
             // 
             // cuiButton_AccountDetails
             // 
@@ -1514,6 +1644,164 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Notification Setting";
             // 
+            // studentsTableAdapter
+            // 
+            this.studentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel16
+            // 
+            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel16.Controls.Add(this.textBox_FM_LastName);
+            this.panel16.Location = new System.Drawing.Point(32, 220);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(198, 49);
+            this.panel16.TabIndex = 53;
+            // 
+            // textBox_FM_LastName
+            // 
+            this.textBox_FM_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_LastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_LastName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_LastName.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_LastName.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_LastName.Name = "textBox_FM_LastName";
+            this.textBox_FM_LastName.Size = new System.Drawing.Size(162, 21);
+            this.textBox_FM_LastName.TabIndex = 4;
+            // 
+            // panel17
+            // 
+            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel17.Location = new System.Drawing.Point(31, 219);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(200, 52);
+            this.panel17.TabIndex = 54;
+            this.panel17.Visible = false;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel9.Controls.Add(this.textBox1);
+            this.panel9.Location = new System.Drawing.Point(258, 220);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(198, 49);
+            this.panel9.TabIndex = 62;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(16, 14);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(162, 21);
+            this.textBox1.TabIndex = 9;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel14.Location = new System.Drawing.Point(257, 219);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(200, 52);
+            this.panel14.TabIndex = 63;
+            this.panel14.Visible = false;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel18.Controls.Add(this.textBox2);
+            this.panel18.Location = new System.Drawing.Point(258, 143);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(198, 49);
+            this.panel18.TabIndex = 60;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(16, 14);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(162, 21);
+            this.textBox2.TabIndex = 8;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel19.Location = new System.Drawing.Point(257, 142);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(200, 52);
+            this.panel19.TabIndex = 61;
+            this.panel19.Visible = false;
+            // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel20.Controls.Add(this.textBox3);
+            this.panel20.Location = new System.Drawing.Point(258, 66);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(198, 49);
+            this.panel20.TabIndex = 58;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(16, 14);
+            this.textBox3.MaxLength = 5;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(162, 21);
+            this.textBox3.TabIndex = 7;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel21.Location = new System.Drawing.Point(257, 65);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(200, 52);
+            this.panel21.TabIndex = 59;
+            this.panel21.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label17.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label17.Location = new System.Drawing.Point(256, 197);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(87, 19);
+            this.label17.TabIndex = 57;
+            this.label17.Text = "LAST NAME";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label18.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label18.Location = new System.Drawing.Point(256, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(90, 19);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "FIRST NAME";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label19.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label19.Location = new System.Drawing.Point(252, 43);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(36, 19);
+            this.label19.TabIndex = 55;
+            this.label19.Text = "AGE";
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1549,22 +1837,22 @@
             this.panel_Menu_AccountDetails.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel_Gender.ResumeLayout(false);
-            this.panel_Age.ResumeLayout(false);
-            this.panel_Age.PerformLayout();
-            this.panel_FullName.ResumeLayout(false);
-            this.panel_FullName.PerformLayout();
+            this.panel_AD_Gender.ResumeLayout(false);
+            this.panel_AD_Age.ResumeLayout(false);
+            this.panel_AD_Age.PerformLayout();
+            this.panel_AD_FullName.ResumeLayout(false);
+            this.panel_AD_FullName.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel_Menu_FamilyManagement.ResumeLayout(false);
             this.panel_Menu_FamilyManagement.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel_bg_AccountDetails.ResumeLayout(false);
@@ -1585,6 +1873,14 @@
             this.panel_Menu_NotificationSetting.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1616,7 +1912,7 @@
         private System.Windows.Forms.Panel panel4;
         private CuoreUI.Controls.cuiButton cuiButton_AccountDetails;
         private System.Windows.Forms.Panel panel_bg_AccountDetails;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_SteamID;
         private System.Windows.Forms.Panel panel_bg_NotificationSetting;
         private CuoreUI.Controls.cuiButton cuiButton_NotificationSetting;
         private System.Windows.Forms.Panel panel_bg_CookiesBrowsing;
@@ -1627,28 +1923,28 @@
         private CuoreUI.Controls.cuiButton cuiButton_FamilyManagement;
         private System.Windows.Forms.Panel panel_bg_StorePreferences;
         private CuoreUI.Controls.cuiButton cuiButton_StorePreferences;
-        private System.Windows.Forms.Panel panel_FullName;
-        private System.Windows.Forms.TextBox textBox_FullName;
-        private System.Windows.Forms.Panel panel_ErrorFullName;
-        private System.Windows.Forms.Panel panel_ErrorAge;
-        private System.Windows.Forms.Panel panel_Age;
-        private System.Windows.Forms.TextBox textBox_Age;
-        private System.Windows.Forms.Panel panel_ErrorGender;
-        private System.Windows.Forms.Panel panel_Gender;
+        private System.Windows.Forms.Panel panel_AD_FullName;
+        private System.Windows.Forms.TextBox textBox_AD_FullName;
+        private System.Windows.Forms.Panel panel_AD_ErrorFullName;
+        private System.Windows.Forms.Panel panel_AD_ErrorAge;
+        private System.Windows.Forms.Panel panel_AD_Age;
+        private System.Windows.Forms.TextBox textBox_AD_Age;
+        private System.Windows.Forms.Panel panel_AD_ErrorGender;
+        private System.Windows.Forms.Panel panel_AD_Gender;
         private System.Windows.Forms.ComboBox comboBox_Gender;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label_Password;
+        private System.Windows.Forms.Label label_AD_Gender;
+        private System.Windows.Forms.Label label_AD_Age;
+        private System.Windows.Forms.Label label_AD_FullName;
         private CuoreUI.Controls.cuiButton cuiButton_Save;
-        private System.Windows.Forms.Label label_ErrorMsg;
-        private System.Windows.Forms.Label label_SavedSuccessfully;
+        private System.Windows.Forms.Label label_AD_ErrorMsg;
+        private System.Windows.Forms.Label label_AD_SavedSuccessfully;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox_Output;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox_AD_Output;
+        private System.Windows.Forms.Label label_AD_SavedInfo;
         private System.Windows.Forms.Panel panel_Menu_FamilyManagement;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label_AD_AccountInformation;
+        private System.Windows.Forms.Label label_FM_StudentManagement;
         private System.Windows.Forms.Panel panel_Menu_StorePreferences;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label7;
@@ -1664,34 +1960,41 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox1;
         private CuoreUI.Controls.cuiButton cuiButton1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox_FM_FirstName;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TextBox textBox_FM_StudentID;
+        private System.Windows.Forms.Panel panel15;
+        private StudentDBDataSet studentDBDataSet;
+        private System.Windows.Forms.BindingSource studentsBindingSource;
+        private StudentDBDataSetTableAdapters.StudentsTableAdapter studentsTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView_StudentsList;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Button button_Expand;
+        private CuoreUI.Controls.cuiButton cuiButton2;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TextBox textBox_FM_LastName;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

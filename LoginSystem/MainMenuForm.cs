@@ -39,8 +39,8 @@ namespace LoginSystem
             this.panel_MenuTop.MouseMove += this.MouseMove;
             this.panel_MenuTop.MouseUp += this.MouseUp;
 
-            textBox_FullName.TextChanged += HideErrorMsg;
-            textBox_Age.TextChanged += HideErrorMsg;
+            textBox_AD_FullName.TextChanged += HideErrorMsg;
+            textBox_AD_Age.TextChanged += HideErrorMsg;
             comboBox_Gender.TextChanged += HideErrorMsg;
 
             // Show Account Details panel by default
@@ -57,7 +57,7 @@ namespace LoginSystem
 
             if (File.Exists(filePath))
             {
-                textBox_Output.Text = File.ReadAllText(filePath);
+                textBox_AD_Output.Text = File.ReadAllText(filePath);
             }
         }
 
@@ -156,33 +156,24 @@ namespace LoginSystem
 
         // ACCOUNT DETAILS
 
-        private void textBox_Age_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Allow digits and backspace only
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // Block the key press
-            }
-        }
-        
         private void cuiButton_Save_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(textBox_FullName.Text)
-                && !string.IsNullOrWhiteSpace(textBox_Age.Text)
+            if (!string.IsNullOrWhiteSpace(textBox_AD_FullName.Text)
+                && !string.IsNullOrWhiteSpace(textBox_AD_Age.Text)
                 && comboBox_Gender.SelectedItem != null)
             {
-               label_SavedSuccessfully.Visible = true;
-               label_SavedSuccessfully.Show();
+               label_AD_SavedSuccessfully.Visible = true;
+               label_AD_SavedSuccessfully.Show();
 
                 // saving 
-                string username = textBox_FullName.Text.Trim();
-                string age = textBox_Age.Text.Trim();
+                string username = textBox_AD_FullName.Text.Trim();
+                string age = textBox_AD_Age.Text.Trim();
                 string gender = comboBox_Gender.SelectedItem?.ToString() ?? "Not selected";
 
                 string userInfo = $"Username: {username}, \nAge: {age}, \nGender: {gender}";
 
                 // Show in textBox_Output
-                textBox_Output.Text = "";
+                textBox_AD_Output.Text = "";
 
                 // Save to file
                 string filePath = "userdata.txt";
@@ -199,22 +190,22 @@ namespace LoginSystem
 
                 if (File.Exists(filePath))
                 {
-                    textBox_Output.Text = File.ReadAllText(filePath);
+                    textBox_AD_Output.Text = File.ReadAllText(filePath);
                 }
             }
             else
             {
-                label_ErrorMsg.Visible = true;
-                label_ErrorMsg.Show();
+                label_AD_ErrorMsg.Visible = true;
+                label_AD_ErrorMsg.Show();
 
-                panel_ErrorFullName.Visible = true;
-                panel_ErrorFullName.Show();
+                panel_AD_ErrorFullName.Visible = true;
+                panel_AD_ErrorFullName.Show();
 
-                panel_ErrorAge.Visible = true;
-                panel_ErrorAge.Show();
+                panel_AD_ErrorAge.Visible = true;
+                panel_AD_ErrorAge.Show();
 
-                panel_ErrorGender.Visible = true;
-                panel_ErrorGender.Show();
+                panel_AD_ErrorGender.Visible = true;
+                panel_AD_ErrorGender.Show();
             }
         }
 
@@ -224,6 +215,10 @@ namespace LoginSystem
 
         // FAMILY MANAGEMENT
 
+        private void button_Expand_Click(object sender, EventArgs e)
+        {
+            dataGridView_StudentsList.Width = (dataGridView_StudentsList.Width != 722) ? 722 : 350;
+        }
 
 
 
@@ -238,11 +233,11 @@ namespace LoginSystem
 
         private void HideErrorMsg(object sender, EventArgs e)
         {
-            panel_ErrorFullName.Visible = false;
-            panel_ErrorGender.Visible = false;
-            panel_ErrorAge.Visible = false;
-            label_ErrorMsg.Visible = false;
-            label_SavedSuccessfully.Visible = false;
+            panel_AD_ErrorFullName.Visible = false;
+            panel_AD_ErrorGender.Visible = false;
+            panel_AD_ErrorAge.Visible = false;
+            label_AD_ErrorMsg.Visible = false;
+            label_AD_SavedSuccessfully.Visible = false;
         }
 
         private void ShowSelectedButtonAndPanel(cuiButton activeButton)
@@ -285,6 +280,14 @@ namespace LoginSystem
 
         }
 
-        
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow digits and backspace only
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Block the key press
+            }
+        }
+
     }
 }

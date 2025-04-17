@@ -80,6 +80,8 @@ namespace LoginSystem
 
         private void cuiButton_CantSignIn_Click(object sender, EventArgs e)
         {
+            // TODO: Implement forgot password functionality
+
             //password = textBox_Password.Text;
 
             if (textBox_AccountName.Text == accountName)
