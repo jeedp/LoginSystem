@@ -60,7 +60,7 @@
             this.label_AD_SavedSuccessfully = new System.Windows.Forms.Label();
             this.label_AD_Error_Msg = new System.Windows.Forms.Label();
             this.panel_AD_Gender = new System.Windows.Forms.Panel();
-            this.comboBox_Gender = new System.Windows.Forms.ComboBox();
+            this.comboBox_AD_Gender = new System.Windows.Forms.ComboBox();
             this.panel_AD_Age = new System.Windows.Forms.Panel();
             this.textBox_AD_Age = new System.Windows.Forms.TextBox();
             this.panel_AD_FullName = new System.Windows.Forms.Panel();
@@ -75,7 +75,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_AD_AccountInformation = new System.Windows.Forms.Label();
             this.panel_Menu_FamilyManagement = new System.Windows.Forms.Panel();
+            this.panel_FM_Course = new System.Windows.Forms.Panel();
+            this.textBox_FM_Course = new System.Windows.Forms.TextBox();
+            this.panel_FM_Error_Course = new System.Windows.Forms.Panel();
+            this.panel_FM_LastName = new System.Windows.Forms.Panel();
+            this.textBox_FM_LastName = new System.Windows.Forms.TextBox();
             this.cuiButton_FM_Delete = new CuoreUI.Controls.cuiButton();
+            this.panel_FM_Error_LastName = new System.Windows.Forms.Panel();
             this.dataGridView_StudentsList = new System.Windows.Forms.DataGridView();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,13 +90,18 @@
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDBDataSet = new LoginSystem.StudentDBDataSet();
+            this.panel_FM_Age = new System.Windows.Forms.Panel();
+            this.textBox_FM_Age = new System.Windows.Forms.TextBox();
+            this.panel_FM_Error_Age = new System.Windows.Forms.Panel();
             this.panel_FM_FirstName = new System.Windows.Forms.Panel();
             this.textBox_FM_FirstName = new System.Windows.Forms.TextBox();
             this.panel_FM_Error_FirstName = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel_FM_StudentID = new System.Windows.Forms.Panel();
             this.textBox_FM_StudentID = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel_FM_Error_StudentID = new System.Windows.Forms.Panel();
-            this.label_FM_SuccessMsg = new System.Windows.Forms.Label();
+            this.label_FM_UpdatedSuccessfully = new System.Windows.Forms.Label();
             this.label_FM_Error_Msg = new System.Windows.Forms.Label();
             this.cuiButton_FM_Update = new CuoreUI.Controls.cuiButton();
             this.label14 = new System.Windows.Forms.Label();
@@ -124,17 +135,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.studentsTableAdapter = new LoginSystem.StudentDBDataSetTableAdapters.StudentsTableAdapter();
-            this.panel_FM_Course = new System.Windows.Forms.Panel();
-            this.textBox_FM_Course = new System.Windows.Forms.TextBox();
-            this.panel_FM_Error_Course = new System.Windows.Forms.Panel();
-            this.panel_FM_LastName = new System.Windows.Forms.Panel();
-            this.textBox_FM_LastName = new System.Windows.Forms.TextBox();
-            this.panel_FM_Error_LastName = new System.Windows.Forms.Panel();
-            this.panel_FM_Age = new System.Windows.Forms.Panel();
-            this.textBox_FM_Age = new System.Windows.Forms.TextBox();
-            this.panel_FM_Error_Age = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.cuiButton_FM_Add = new CuoreUI.Controls.cuiButton();
             this.Panel_Title.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_MenuBottom.SuspendLayout();
@@ -145,9 +146,12 @@
             this.panel_AD_FullName.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_Menu_FamilyManagement.SuspendLayout();
+            this.panel_FM_Course.SuspendLayout();
+            this.panel_FM_LastName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).BeginInit();
+            this.panel_FM_Age.SuspendLayout();
             this.panel_FM_FirstName.SuspendLayout();
             this.panel_FM_StudentID.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -165,9 +169,6 @@
             this.panel8.SuspendLayout();
             this.panel_Menu_NotificationSetting.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel_FM_Course.SuspendLayout();
-            this.panel_FM_LastName.SuspendLayout();
-            this.panel_FM_Age.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -389,6 +390,7 @@
             this.button_Minimize.Name = "button_Minimize";
             this.button_Minimize.Size = new System.Drawing.Size(43, 40);
             this.button_Minimize.TabIndex = 6;
+            this.button_Minimize.TabStop = false;
             this.button_Minimize.UseVisualStyleBackColor = true;
             this.button_Minimize.Click += new System.EventHandler(this.button_Minimize_Click);
             // 
@@ -403,6 +405,7 @@
             this.button_Maximize.Name = "button_Maximize";
             this.button_Maximize.Size = new System.Drawing.Size(43, 40);
             this.button_Maximize.TabIndex = 5;
+            this.button_Maximize.TabStop = false;
             this.button_Maximize.UseVisualStyleBackColor = true;
             // 
             // button_Exit
@@ -419,6 +422,7 @@
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(43, 40);
             this.button_Exit.TabIndex = 1;
+            this.button_Exit.TabStop = false;
             this.button_Exit.UseVisualStyleBackColor = false;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
@@ -702,26 +706,26 @@
             // panel_AD_Gender
             // 
             this.panel_AD_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_AD_Gender.Controls.Add(this.comboBox_Gender);
+            this.panel_AD_Gender.Controls.Add(this.comboBox_AD_Gender);
             this.panel_AD_Gender.Location = new System.Drawing.Point(32, 220);
             this.panel_AD_Gender.Name = "panel_AD_Gender";
             this.panel_AD_Gender.Size = new System.Drawing.Size(256, 49);
             this.panel_AD_Gender.TabIndex = 28;
             // 
-            // comboBox_Gender
+            // comboBox_AD_Gender
             // 
-            this.comboBox_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.comboBox_Gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox_Gender.Font = new System.Drawing.Font("SansSerif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.comboBox_Gender.ForeColor = System.Drawing.Color.White;
-            this.comboBox_Gender.FormattingEnabled = true;
-            this.comboBox_Gender.Items.AddRange(new object[] {
+            this.comboBox_AD_Gender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.comboBox_AD_Gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox_AD_Gender.Font = new System.Drawing.Font("SansSerif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.comboBox_AD_Gender.ForeColor = System.Drawing.Color.White;
+            this.comboBox_AD_Gender.FormattingEnabled = true;
+            this.comboBox_AD_Gender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox_Gender.Location = new System.Drawing.Point(1, 11);
-            this.comboBox_Gender.Name = "comboBox_Gender";
-            this.comboBox_Gender.Size = new System.Drawing.Size(253, 28);
-            this.comboBox_Gender.TabIndex = 31;
+            this.comboBox_AD_Gender.Location = new System.Drawing.Point(1, 11);
+            this.comboBox_AD_Gender.Name = "comboBox_AD_Gender";
+            this.comboBox_AD_Gender.Size = new System.Drawing.Size(253, 28);
+            this.comboBox_AD_Gender.TabIndex = 31;
             // 
             // panel_AD_Age
             // 
@@ -889,12 +893,13 @@
             // panel_Menu_FamilyManagement
             // 
             this.panel_Menu_FamilyManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.panel_Menu_FamilyManagement.Controls.Add(this.dataGridView_StudentsList);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.cuiButton_FM_Add);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Course);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Error_Course);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_LastName);
             this.panel_Menu_FamilyManagement.Controls.Add(this.cuiButton_FM_Delete);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Error_LastName);
-            this.panel_Menu_FamilyManagement.Controls.Add(this.dataGridView_StudentsList);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Age);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Error_Age);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_FirstName);
@@ -903,7 +908,7 @@
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_StudentID);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label19);
             this.panel_Menu_FamilyManagement.Controls.Add(this.panel_FM_Error_StudentID);
-            this.panel_Menu_FamilyManagement.Controls.Add(this.label_FM_SuccessMsg);
+            this.panel_Menu_FamilyManagement.Controls.Add(this.label_FM_UpdatedSuccessfully);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label_FM_Error_Msg);
             this.panel_Menu_FamilyManagement.Controls.Add(this.cuiButton_FM_Update);
             this.panel_Menu_FamilyManagement.Controls.Add(this.label14);
@@ -914,6 +919,55 @@
             this.panel_Menu_FamilyManagement.Name = "panel_Menu_FamilyManagement";
             this.panel_Menu_FamilyManagement.Size = new System.Drawing.Size(963, 360);
             this.panel_Menu_FamilyManagement.TabIndex = 37;
+            // 
+            // panel_FM_Course
+            // 
+            this.panel_FM_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_FM_Course.Controls.Add(this.textBox_FM_Course);
+            this.panel_FM_Course.Location = new System.Drawing.Point(32, 220);
+            this.panel_FM_Course.Name = "panel_FM_Course";
+            this.panel_FM_Course.Size = new System.Drawing.Size(424, 49);
+            this.panel_FM_Course.TabIndex = 53;
+            // 
+            // textBox_FM_Course
+            // 
+            this.textBox_FM_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_Course.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_Course.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_Course.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_Course.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_Course.Name = "textBox_FM_Course";
+            this.textBox_FM_Course.Size = new System.Drawing.Size(388, 21);
+            this.textBox_FM_Course.TabIndex = 4;
+            // 
+            // panel_FM_Error_Course
+            // 
+            this.panel_FM_Error_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_FM_Error_Course.Location = new System.Drawing.Point(31, 219);
+            this.panel_FM_Error_Course.Name = "panel_FM_Error_Course";
+            this.panel_FM_Error_Course.Size = new System.Drawing.Size(426, 52);
+            this.panel_FM_Error_Course.TabIndex = 54;
+            this.panel_FM_Error_Course.Visible = false;
+            // 
+            // panel_FM_LastName
+            // 
+            this.panel_FM_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_FM_LastName.Controls.Add(this.textBox_FM_LastName);
+            this.panel_FM_LastName.Location = new System.Drawing.Point(258, 143);
+            this.panel_FM_LastName.Name = "panel_FM_LastName";
+            this.panel_FM_LastName.Size = new System.Drawing.Size(198, 49);
+            this.panel_FM_LastName.TabIndex = 60;
+            // 
+            // textBox_FM_LastName
+            // 
+            this.textBox_FM_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_LastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_LastName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_LastName.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_LastName.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_LastName.Name = "textBox_FM_LastName";
+            this.textBox_FM_LastName.Size = new System.Drawing.Size(162, 21);
+            this.textBox_FM_LastName.TabIndex = 3;
             // 
             // cuiButton_FM_Delete
             // 
@@ -935,8 +989,8 @@
             this.cuiButton_FM_Delete.ImageAutoCenter = true;
             this.cuiButton_FM_Delete.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButton_FM_Delete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton_FM_Delete.Location = new System.Drawing.Point(258, 310);
-            this.cuiButton_FM_Delete.Margin = new System.Windows.Forms.Padding(24, 3, 3, 3);
+            this.cuiButton_FM_Delete.Location = new System.Drawing.Point(332, 310);
+            this.cuiButton_FM_Delete.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
             this.cuiButton_FM_Delete.Name = "cuiButton_FM_Delete";
             this.cuiButton_FM_Delete.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cuiButton_FM_Delete.NormalForeColor = System.Drawing.Color.White;
@@ -951,6 +1005,16 @@
             this.cuiButton_FM_Delete.Size = new System.Drawing.Size(138, 38);
             this.cuiButton_FM_Delete.TabIndex = 54;
             this.cuiButton_FM_Delete.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Delete.Click += new System.EventHandler(this.cuiButton_FM_Delete_Click);
+            // 
+            // panel_FM_Error_LastName
+            // 
+            this.panel_FM_Error_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_FM_Error_LastName.Location = new System.Drawing.Point(257, 142);
+            this.panel_FM_Error_LastName.Name = "panel_FM_Error_LastName";
+            this.panel_FM_Error_LastName.Size = new System.Drawing.Size(200, 52);
+            this.panel_FM_Error_LastName.TabIndex = 61;
+            this.panel_FM_Error_LastName.Visible = false;
             // 
             // dataGridView_StudentsList
             // 
@@ -975,7 +1039,7 @@
             this.dataGridView_StudentsList.Name = "dataGridView_StudentsList";
             this.dataGridView_StudentsList.ReadOnly = true;
             this.dataGridView_StudentsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView_StudentsList.RowHeadersWidth = 51;
+            this.dataGridView_StudentsList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridView_StudentsList.RowTemplate.Height = 24;
             this.dataGridView_StudentsList.Size = new System.Drawing.Size(466, 322);
             this.dataGridView_StudentsList.TabIndex = 53;
@@ -1035,6 +1099,37 @@
             this.studentDBDataSet.DataSetName = "StudentDBDataSet";
             this.studentDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // panel_FM_Age
+            // 
+            this.panel_FM_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.panel_FM_Age.Controls.Add(this.textBox_FM_Age);
+            this.panel_FM_Age.Location = new System.Drawing.Point(258, 66);
+            this.panel_FM_Age.Name = "panel_FM_Age";
+            this.panel_FM_Age.Size = new System.Drawing.Size(198, 49);
+            this.panel_FM_Age.TabIndex = 58;
+            // 
+            // textBox_FM_Age
+            // 
+            this.textBox_FM_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            this.textBox_FM_Age.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_FM_Age.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.textBox_FM_Age.ForeColor = System.Drawing.Color.White;
+            this.textBox_FM_Age.Location = new System.Drawing.Point(16, 14);
+            this.textBox_FM_Age.MaxLength = 3;
+            this.textBox_FM_Age.Name = "textBox_FM_Age";
+            this.textBox_FM_Age.Size = new System.Drawing.Size(162, 21);
+            this.textBox_FM_Age.TabIndex = 2;
+            this.textBox_FM_Age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
+            // 
+            // panel_FM_Error_Age
+            // 
+            this.panel_FM_Error_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
+            this.panel_FM_Error_Age.Location = new System.Drawing.Point(257, 65);
+            this.panel_FM_Error_Age.Name = "panel_FM_Error_Age";
+            this.panel_FM_Error_Age.Size = new System.Drawing.Size(200, 52);
+            this.panel_FM_Error_Age.TabIndex = 59;
+            this.panel_FM_Error_Age.Visible = false;
+            // 
             // panel_FM_FirstName
             // 
             this.panel_FM_FirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
@@ -1053,7 +1148,7 @@
             this.textBox_FM_FirstName.Location = new System.Drawing.Point(16, 14);
             this.textBox_FM_FirstName.Name = "textBox_FM_FirstName";
             this.textBox_FM_FirstName.Size = new System.Drawing.Size(162, 21);
-            this.textBox_FM_FirstName.TabIndex = 6;
+            this.textBox_FM_FirstName.TabIndex = 1;
             // 
             // panel_FM_Error_FirstName
             // 
@@ -1063,6 +1158,18 @@
             this.panel_FM_Error_FirstName.Size = new System.Drawing.Size(200, 52);
             this.panel_FM_Error_FirstName.TabIndex = 52;
             this.panel_FM_Error_FirstName.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label18.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label18.Location = new System.Drawing.Point(256, 120);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(87, 19);
+            this.label18.TabIndex = 56;
+            this.label18.Text = "LAST NAME";
             // 
             // panel_FM_StudentID
             // 
@@ -1083,7 +1190,19 @@
             this.textBox_FM_StudentID.MaxLength = 5;
             this.textBox_FM_StudentID.Name = "textBox_FM_StudentID";
             this.textBox_FM_StudentID.Size = new System.Drawing.Size(162, 21);
-            this.textBox_FM_StudentID.TabIndex = 2;
+            this.textBox_FM_StudentID.TabIndex = 0;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label19.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
+            this.label19.Location = new System.Drawing.Point(252, 43);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(36, 19);
+            this.label19.TabIndex = 55;
+            this.label19.Text = "AGE";
             // 
             // panel_FM_Error_StudentID
             // 
@@ -1094,18 +1213,18 @@
             this.panel_FM_Error_StudentID.TabIndex = 50;
             this.panel_FM_Error_StudentID.Visible = false;
             // 
-            // label_FM_SuccessMsg
+            // label_FM_UpdatedSuccessfully
             // 
-            this.label_FM_SuccessMsg.AutoSize = true;
-            this.label_FM_SuccessMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label_FM_SuccessMsg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_FM_SuccessMsg.ForeColor = System.Drawing.Color.White;
-            this.label_FM_SuccessMsg.Location = new System.Drawing.Point(167, 282);
-            this.label_FM_SuccessMsg.Name = "label_FM_SuccessMsg";
-            this.label_FM_SuccessMsg.Size = new System.Drawing.Size(156, 20);
-            this.label_FM_SuccessMsg.TabIndex = 47;
-            this.label_FM_SuccessMsg.Text = "Updated successfully!";
-            this.label_FM_SuccessMsg.Visible = false;
+            this.label_FM_UpdatedSuccessfully.AutoSize = true;
+            this.label_FM_UpdatedSuccessfully.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
+            this.label_FM_UpdatedSuccessfully.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_FM_UpdatedSuccessfully.ForeColor = System.Drawing.Color.White;
+            this.label_FM_UpdatedSuccessfully.Location = new System.Drawing.Point(167, 282);
+            this.label_FM_UpdatedSuccessfully.Name = "label_FM_UpdatedSuccessfully";
+            this.label_FM_UpdatedSuccessfully.Size = new System.Drawing.Size(156, 20);
+            this.label_FM_UpdatedSuccessfully.TabIndex = 47;
+            this.label_FM_UpdatedSuccessfully.Text = "Updated successfully!";
+            this.label_FM_UpdatedSuccessfully.Visible = false;
             // 
             // label_FM_Error_Msg
             // 
@@ -1113,11 +1232,11 @@
             this.label_FM_Error_Msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.label_FM_Error_Msg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_FM_Error_Msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.label_FM_Error_Msg.Location = new System.Drawing.Point(35, 282);
+            this.label_FM_Error_Msg.Location = new System.Drawing.Point(107, 282);
             this.label_FM_Error_Msg.Name = "label_FM_Error_Msg";
-            this.label_FM_Error_Msg.Size = new System.Drawing.Size(419, 20);
+            this.label_FM_Error_Msg.Size = new System.Drawing.Size(277, 20);
             this.label_FM_Error_Msg.TabIndex = 41;
-            this.label_FM_Error_Msg.Text = "Please check your full name, age, and gender and try again.";
+            this.label_FM_Error_Msg.Text = "Please check your inputs and try again.";
             this.label_FM_Error_Msg.Visible = false;
             // 
             // cuiButton_FM_Update
@@ -1140,9 +1259,9 @@
             this.cuiButton_FM_Update.ImageAutoCenter = true;
             this.cuiButton_FM_Update.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButton_FM_Update.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton_FM_Update.Location = new System.Drawing.Point(93, 310);
+            this.cuiButton_FM_Update.Location = new System.Drawing.Point(179, 310);
             this.cuiButton_FM_Update.Name = "cuiButton_FM_Update";
-            this.cuiButton_FM_Update.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(123)))), ((int)(((byte)(255)))));
+            this.cuiButton_FM_Update.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
             this.cuiButton_FM_Update.NormalForeColor = System.Drawing.Color.White;
             this.cuiButton_FM_Update.NormalImageTint = System.Drawing.Color.White;
             this.cuiButton_FM_Update.NormalOutline = System.Drawing.Color.Empty;
@@ -1155,6 +1274,7 @@
             this.cuiButton_FM_Update.Size = new System.Drawing.Size(138, 38);
             this.cuiButton_FM_Update.TabIndex = 46;
             this.cuiButton_FM_Update.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Update.Click += new System.EventHandler(this.cuiButton_FM_Update_Click);
             // 
             // label14
             // 
@@ -1215,7 +1335,7 @@
             this.button_FM_Expand.Size = new System.Drawing.Size(43, 38);
             this.button_FM_Expand.TabIndex = 8;
             this.button_FM_Expand.UseVisualStyleBackColor = true;
-            this.button_FM_Expand.Click += new System.EventHandler(this.button_Expand_Click);
+            this.button_FM_Expand.Click += new System.EventHandler(this.button_FM_Expand_Click);
             // 
             // label_FM_StudentManagement
             // 
@@ -1640,118 +1760,43 @@
             // 
             this.studentsTableAdapter.ClearBeforeFill = true;
             // 
-            // panel_FM_Course
+            // cuiButton_FM_Add
             // 
-            this.panel_FM_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_FM_Course.Controls.Add(this.textBox_FM_Course);
-            this.panel_FM_Course.Location = new System.Drawing.Point(32, 220);
-            this.panel_FM_Course.Name = "panel_FM_Course";
-            this.panel_FM_Course.Size = new System.Drawing.Size(424, 49);
-            this.panel_FM_Course.TabIndex = 53;
-            // 
-            // textBox_FM_Course
-            // 
-            this.textBox_FM_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_FM_Course.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_FM_Course.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_FM_Course.ForeColor = System.Drawing.Color.White;
-            this.textBox_FM_Course.Location = new System.Drawing.Point(16, 14);
-            this.textBox_FM_Course.Name = "textBox_FM_Course";
-            this.textBox_FM_Course.Size = new System.Drawing.Size(388, 21);
-            this.textBox_FM_Course.TabIndex = 4;
-            // 
-            // panel_FM_Error_Course
-            // 
-            this.panel_FM_Error_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_FM_Error_Course.Location = new System.Drawing.Point(31, 219);
-            this.panel_FM_Error_Course.Name = "panel_FM_Error_Course";
-            this.panel_FM_Error_Course.Size = new System.Drawing.Size(426, 52);
-            this.panel_FM_Error_Course.TabIndex = 54;
-            this.panel_FM_Error_Course.Visible = false;
-            // 
-            // panel_FM_LastName
-            // 
-            this.panel_FM_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_FM_LastName.Controls.Add(this.textBox_FM_LastName);
-            this.panel_FM_LastName.Location = new System.Drawing.Point(258, 143);
-            this.panel_FM_LastName.Name = "panel_FM_LastName";
-            this.panel_FM_LastName.Size = new System.Drawing.Size(198, 49);
-            this.panel_FM_LastName.TabIndex = 60;
-            // 
-            // textBox_FM_LastName
-            // 
-            this.textBox_FM_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_FM_LastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_FM_LastName.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_FM_LastName.ForeColor = System.Drawing.Color.White;
-            this.textBox_FM_LastName.Location = new System.Drawing.Point(16, 14);
-            this.textBox_FM_LastName.Name = "textBox_FM_LastName";
-            this.textBox_FM_LastName.Size = new System.Drawing.Size(162, 21);
-            this.textBox_FM_LastName.TabIndex = 8;
-            // 
-            // panel_FM_Error_LastName
-            // 
-            this.panel_FM_Error_LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_FM_Error_LastName.Location = new System.Drawing.Point(257, 142);
-            this.panel_FM_Error_LastName.Name = "panel_FM_Error_LastName";
-            this.panel_FM_Error_LastName.Size = new System.Drawing.Size(200, 52);
-            this.panel_FM_Error_LastName.TabIndex = 61;
-            this.panel_FM_Error_LastName.Visible = false;
-            // 
-            // panel_FM_Age
-            // 
-            this.panel_FM_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.panel_FM_Age.Controls.Add(this.textBox_FM_Age);
-            this.panel_FM_Age.Location = new System.Drawing.Point(258, 66);
-            this.panel_FM_Age.Name = "panel_FM_Age";
-            this.panel_FM_Age.Size = new System.Drawing.Size(198, 49);
-            this.panel_FM_Age.TabIndex = 58;
-            // 
-            // textBox_FM_Age
-            // 
-            this.textBox_FM_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
-            this.textBox_FM_Age.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_FM_Age.Font = new System.Drawing.Font("SansSerif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.textBox_FM_Age.ForeColor = System.Drawing.Color.White;
-            this.textBox_FM_Age.Location = new System.Drawing.Point(16, 14);
-            this.textBox_FM_Age.MaxLength = 3;
-            this.textBox_FM_Age.Name = "textBox_FM_Age";
-            this.textBox_FM_Age.Size = new System.Drawing.Size(162, 21);
-            this.textBox_FM_Age.TabIndex = 7;
-            this.textBox_FM_Age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
-            // 
-            // panel_FM_Error_Age
-            // 
-            this.panel_FM_Error_Age.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.panel_FM_Error_Age.Location = new System.Drawing.Point(257, 65);
-            this.panel_FM_Error_Age.Name = "panel_FM_Error_Age";
-            this.panel_FM_Error_Age.Size = new System.Drawing.Size(200, 52);
-            this.panel_FM_Error_Age.TabIndex = 59;
-            this.panel_FM_Error_Age.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label18.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label18.Location = new System.Drawing.Point(256, 120);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(87, 19);
-            this.label18.TabIndex = 56;
-            this.label18.Text = "LAST NAME";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
-            this.label19.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(175)))), ((int)(((byte)(175)))));
-            this.label19.Location = new System.Drawing.Point(252, 43);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(36, 19);
-            this.label19.TabIndex = 55;
-            this.label19.Text = "AGE";
+            this.cuiButton_FM_Add.CheckButton = false;
+            this.cuiButton_FM_Add.Checked = false;
+            this.cuiButton_FM_Add.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton_FM_Add.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton_FM_Add.Content = "Add";
+            this.cuiButton_FM_Add.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.cuiButton_FM_Add.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton_FM_Add.ForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
+            this.cuiButton_FM_Add.HoveredImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.Image = null;
+            this.cuiButton_FM_Add.ImageAutoCenter = true;
+            this.cuiButton_FM_Add.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.Location = new System.Drawing.Point(26, 310);
+            this.cuiButton_FM_Add.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.cuiButton_FM_Add.Name = "cuiButton_FM_Add";
+            this.cuiButton_FM_Add.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.cuiButton_FM_Add.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.OutlineThickness = 1.6F;
+            this.cuiButton_FM_Add.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            this.cuiButton_FM_Add.PressedForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.Rounding = new System.Windows.Forms.Padding(2);
+            this.cuiButton_FM_Add.Size = new System.Drawing.Size(138, 38);
+            this.cuiButton_FM_Add.TabIndex = 62;
+            this.cuiButton_FM_Add.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.Click += new System.EventHandler(this.cuiButton_FM_Add_Click);
             // 
             // MainMenuForm
             // 
@@ -1797,9 +1842,15 @@
             this.panel4.PerformLayout();
             this.panel_Menu_FamilyManagement.ResumeLayout(false);
             this.panel_Menu_FamilyManagement.PerformLayout();
+            this.panel_FM_Course.ResumeLayout(false);
+            this.panel_FM_Course.PerformLayout();
+            this.panel_FM_LastName.ResumeLayout(false);
+            this.panel_FM_LastName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).EndInit();
+            this.panel_FM_Age.ResumeLayout(false);
+            this.panel_FM_Age.PerformLayout();
             this.panel_FM_FirstName.ResumeLayout(false);
             this.panel_FM_FirstName.PerformLayout();
             this.panel_FM_StudentID.ResumeLayout(false);
@@ -1824,12 +1875,6 @@
             this.panel_Menu_NotificationSetting.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel_FM_Course.ResumeLayout(false);
-            this.panel_FM_Course.PerformLayout();
-            this.panel_FM_LastName.ResumeLayout(false);
-            this.panel_FM_LastName.PerformLayout();
-            this.panel_FM_Age.ResumeLayout(false);
-            this.panel_FM_Age.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1880,7 +1925,7 @@
         private System.Windows.Forms.TextBox textBox_AD_Age;
         private System.Windows.Forms.Panel panel_AD_Error_Gender;
         private System.Windows.Forms.Panel panel_AD_Gender;
-        private System.Windows.Forms.ComboBox comboBox_Gender;
+        private System.Windows.Forms.ComboBox comboBox_AD_Gender;
         private System.Windows.Forms.Label label_AD_Gender;
         private System.Windows.Forms.Label label_AD_Age;
         private System.Windows.Forms.Label label_AD_FullName;
@@ -1907,7 +1952,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label_FM_SuccessMsg;
+        private System.Windows.Forms.Label label_FM_UpdatedSuccessfully;
         private System.Windows.Forms.Label label_FM_Error_Msg;
         private CuoreUI.Controls.cuiButton cuiButton_FM_Update;
         private System.Windows.Forms.Label label14;
@@ -1941,5 +1986,6 @@
         private System.Windows.Forms.Panel panel_FM_Error_Age;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private CuoreUI.Controls.cuiButton cuiButton_FM_Add;
     }
 }

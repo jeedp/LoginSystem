@@ -4,6 +4,10 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using CuoreUI.Controls;
+using System.Data.SqlClient;
+using System.Text;
+using System.Data;
+
 
 
 namespace LoginSystem
@@ -19,6 +23,7 @@ namespace LoginSystem
         private Dictionary<cuiButton, Panel> buttonBGButtonMap;
         private Dictionary<cuiButton, Panel> buttonMenuPanelMap;
 
+        private string connectionString = "Data Source=LAPTOP-R9RSTS0G\\SQLEXPRESS;Initial Catalog=StudentDB;Integrated Security=True;";
 
 
 
@@ -31,6 +36,7 @@ namespace LoginSystem
         {
             // TODO: This line of code loads data into the 'studentDBDataSet.Students' table. You can move, or remove it, as needed.
             this.studentsTableAdapter.Fill(this.studentDBDataSet.Students);
+
             this.Panel_Title.MouseDown += this.MouseDown;
             this.Panel_Title.MouseMove += this.MouseMove;
             this.Panel_Title.MouseUp += this.MouseUp;
@@ -41,7 +47,13 @@ namespace LoginSystem
 
             textBox_AD_FullName.TextChanged += HideErrorMsg;
             textBox_AD_Age.TextChanged += HideErrorMsg;
-            comboBox_Gender.TextChanged += HideErrorMsg;
+            comboBox_AD_Gender.TextChanged += HideErrorMsg;
+
+            textBox_FM_StudentID.TextChanged += HideErrorMsg;
+            textBox_FM_FirstName.TextChanged += HideErrorMsg;
+            textBox_FM_LastName.TextChanged += HideErrorMsg;
+            textBox_FM_Course.TextChanged += HideErrorMsg;
+            textBox_FM_Age.TextChanged += HideErrorMsg;
 
             // Show Account Details panel by default
             //panel_Menu_AccountDetails.Height = 292;             panel_Menu_AccountDetails.Width = 722;
@@ -160,7 +172,7 @@ namespace LoginSystem
         {
             if (!string.IsNullOrWhiteSpace(textBox_AD_FullName.Text)
                 && !string.IsNullOrWhiteSpace(textBox_AD_Age.Text)
-                && comboBox_Gender.SelectedItem != null)
+                && comboBox_AD_Gender.SelectedItem != null)
             {
                label_AD_SavedSuccessfully.Visible = true;
                label_AD_SavedSuccessfully.Show();
@@ -168,7 +180,7 @@ namespace LoginSystem
                 // saving 
                 string username = textBox_AD_FullName.Text.Trim();
                 string age = textBox_AD_Age.Text.Trim();
-                string gender = comboBox_Gender.SelectedItem?.ToString() ?? "Not selected";
+                string gender = comboBox_AD_Gender.SelectedItem?.ToString() ?? "Not selected";
 
                 string userInfo = $"Username: {username}, \nAge: {age}, \nGender: {gender}";
 
@@ -215,9 +227,190 @@ namespace LoginSystem
 
         // FAMILY MANAGEMENT
 
-        private void button_Expand_Click(object sender, EventArgs e)
+        private void button_FM_Expand_Click(object sender, EventArgs e)
         {
             dataGridView_StudentsList.Width = (dataGridView_StudentsList.Width != 722) ? 722 : 350;
+        }
+
+        private void cuiButton_FM_Add_Click(object sender, EventArgs e)
+        {
+            textBox_FM_StudentID.Clear();
+
+            int newStudentId = GetNextCustomStudentID();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Students (StudentID, FirstName, LastName, Age, Course) " +
+                               "VALUES (@ID, @FirstName, @LastName, @Age, @Course)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@ID", newStudentId);
+                cmd.Parameters.AddWithValue("@FirstName", textBox_FM_FirstName.Text);
+                cmd.Parameters.AddWithValue("@LastName", textBox_FM_LastName.Text);
+                cmd.Parameters.AddWithValue("@Age", int.Parse(textBox_FM_Age.Text));
+                cmd.Parameters.AddWithValue("@Course", textBox_FM_Course.Text);
+
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    LoadStudents();
+                    label_FM_UpdatedSuccessfully.Visible = true;
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("Error adding student: " + ex.Message);
+                    label_FM_Error_Msg.Visible = true;
+                    label_FM_Error_Msg.Text = "Error adding student: " + ex.Message;
+                }
+                finally
+                {
+                    textBox_FM_FirstName.Clear();
+                    textBox_FM_LastName.Clear();
+                    textBox_FM_Age.Clear();
+                    textBox_FM_Course.Clear();
+                }
+            }
+        }
+
+        private void cuiButton_FM_Update_Click(object sender, EventArgs e)
+        {
+            int studentId;
+            if (!int.TryParse(textBox_FM_StudentID.Text, out studentId))
+            {
+                MessageBox.Show("Please enter a valid Student ID.");
+                return;
+            }
+
+            StringBuilder queryBuilder = new StringBuilder("UPDATE Students SET ");
+            List<SqlParameter> parameters = new List<SqlParameter>();
+
+            if (!string.IsNullOrWhiteSpace(textBox_FM_FirstName.Text))
+            {
+                queryBuilder.Append("FirstName = @FirstName, ");
+                parameters.Add(new SqlParameter("@FirstName", textBox_FM_FirstName.Text));
+            }
+
+            if (!string.IsNullOrWhiteSpace(textBox_FM_LastName.Text))
+            {
+                queryBuilder.Append("LastName = @LastName, ");
+                parameters.Add(new SqlParameter("@LastName", textBox_FM_LastName.Text));
+            }
+
+            if (!string.IsNullOrWhiteSpace(textBox_FM_Age.Text))
+            {
+                queryBuilder.Append("Age = @Age, ");
+                parameters.Add(new SqlParameter("@Age", int.Parse(textBox_FM_Age.Text)));
+            }
+
+            if (!string.IsNullOrWhiteSpace(textBox_FM_Course.Text))
+            {
+                queryBuilder.Append("Course = @Course, ");
+                parameters.Add(new SqlParameter("@Course", textBox_FM_Course.Text));
+            }
+
+            // Remove the last comma and space from the query
+            if (queryBuilder.ToString().EndsWith(", "))
+            {
+                queryBuilder.Remove(queryBuilder.Length - 2, 2);
+            }
+
+            // Add the WHERE clause
+            queryBuilder.Append(" WHERE StudentID = @StudentID");
+            parameters.Add(new SqlParameter("@StudentID", studentId));
+
+            // Execute the query if there is any field to update
+            if (parameters.Count > 1) // At least one parameter has been added
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(queryBuilder.ToString(), conn);
+                    cmd.Parameters.AddRange(parameters.ToArray());
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            LoadStudents();
+                            label_FM_UpdatedSuccessfully.Visible = true;
+                        }
+                        else
+                        {
+                            label_FM_UpdatedSuccessfully.Visible = true;
+                            label_FM_UpdatedSuccessfully.Text = "No changes were made";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        label_FM_Error_Msg.Visible = true;
+                        label_FM_Error_Msg.Text = "Error updating student: " + ex.Message;
+                    }
+                }
+            }
+            else
+            {
+                label_FM_UpdatedSuccessfully.Visible = true;
+                label_FM_UpdatedSuccessfully.Text = "No changes were made";
+            }
+        }
+
+        private void cuiButton_FM_Delete_Click(object sender, EventArgs e)
+        {
+            int studentId;
+
+            if (!int.TryParse(textBox_FM_StudentID.Text, out studentId))
+            {
+                label_FM_Error_Msg.Visible = true;
+                return;
+            }
+
+            // Show confirmation message box
+            DialogResult result = MessageBox.Show(
+                $"Are you sure you want to delete Student ID: {studentId}?",
+                "Confirm Deletion",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = "DELETE FROM Students WHERE StudentID = @ID";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ID", studentId);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            LoadStudents();
+                            label_FM_UpdatedSuccessfully.Visible = true;
+                        }
+                        else
+                        {
+                            label_FM_Error_Msg.Visible = true;
+                            label_FM_Error_Msg.Text = "No student found with that ID.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        label_FM_Error_Msg.Visible = true;
+                        label_FM_Error_Msg.Text = "Error deleting student: " + ex.Message;
+                    }
+                }
+            }
+            else
+            {
+                label_FM_UpdatedSuccessfully.Visible = true;
+                label_FM_UpdatedSuccessfully.Text = "Deletion canceled";
+            }
         }
 
 
@@ -233,11 +426,21 @@ namespace LoginSystem
 
         private void HideErrorMsg(object sender, EventArgs e)
         {
+            // ACCOUNT DETAILS MENU
             panel_AD_Error_FullName.Visible = false;
             panel_AD_Error_Gender.Visible = false;
             panel_AD_Error_Age.Visible = false;
             label_AD_Error_Msg.Visible = false;
             label_AD_SavedSuccessfully.Visible = false;
+
+            // FAMILY MANAGEMENT MENU
+            panel_FM_Error_StudentID.Visible = false;
+            panel_FM_Error_FirstName.Visible = false;
+            panel_FM_Error_LastName.Visible = false;
+            panel_FM_Error_Course.Visible = false;
+            panel_FM_Error_Age.Visible = false;
+            label_FM_Error_Msg.Visible = false;
+            label_FM_UpdatedSuccessfully.Visible = false;
         }
 
         private void ShowSelectedButtonAndPanel(cuiButton activeButton)
@@ -286,6 +489,59 @@ namespace LoginSystem
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true; // Block the key press
+            }
+        }
+
+        private int GetNextCustomStudentID()
+        {
+            int nextId = 0;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT MAX(StudentID) FROM Students";
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        nextId = Convert.ToInt32(result) + 1;
+                    }
+                    else
+                    {
+                        nextId = 23901; // Starting point if no records exist
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting next Student ID: " + ex.Message);
+                }
+            }
+
+            return nextId;
+        }
+
+        private void LoadStudents()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT StudentID, FirstName, LastName, Age, Course FROM Students";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    conn.Open();
+                    adapter.Fill(dataTable);
+                    dataGridView_StudentsList.DataSource = dataTable;  // Bind the data to the DataGridView
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading student data: " + ex.Message);
+                }
             }
         }
 

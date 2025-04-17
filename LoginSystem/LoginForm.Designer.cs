@@ -92,6 +92,7 @@
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(43, 40);
             this.button_Exit.TabIndex = 5;
+            this.button_Exit.TabStop = false;
             this.button_Exit.UseVisualStyleBackColor = false;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
@@ -218,7 +219,7 @@
             this.cuiButton_SignIn.PressedOutline = System.Drawing.Color.Empty;
             this.cuiButton_SignIn.Rounding = new System.Windows.Forms.Padding(2);
             this.cuiButton_SignIn.Size = new System.Drawing.Size(370, 58);
-            this.cuiButton_SignIn.TabIndex = 0;
+            this.cuiButton_SignIn.TabIndex = 3;
             this.cuiButton_SignIn.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton_SignIn.Click += new System.EventHandler(this.cuiButton_SignIn_Click);
             // 
