@@ -106,6 +106,14 @@ namespace LoginSystem
             label_ErrorMsg.Visible = false;
         }
 
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '<' && e.KeyChar != '>')
+            {
+                e.Handled = true; // Block the key press
+            }
+        }
+
 
 
 

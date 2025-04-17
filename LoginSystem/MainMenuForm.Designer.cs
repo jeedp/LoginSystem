@@ -1191,6 +1191,7 @@
             this.textBox_FM_StudentID.Name = "textBox_FM_StudentID";
             this.textBox_FM_StudentID.Size = new System.Drawing.Size(162, 21);
             this.textBox_FM_StudentID.TabIndex = 0;
+            this.textBox_FM_StudentID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // label19
             // 
@@ -1232,7 +1233,7 @@
             this.label_FM_Error_Msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.label_FM_Error_Msg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_FM_Error_Msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.label_FM_Error_Msg.Location = new System.Drawing.Point(107, 282);
+            this.label_FM_Error_Msg.Location = new System.Drawing.Point(116, 282);
             this.label_FM_Error_Msg.Name = "label_FM_Error_Msg";
             this.label_FM_Error_Msg.Size = new System.Drawing.Size(277, 20);
             this.label_FM_Error_Msg.TabIndex = 41;
