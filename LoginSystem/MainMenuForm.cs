@@ -195,17 +195,17 @@ namespace LoginSystem
             }
             else
             {
-                label_AD_ErrorMsg.Visible = true;
-                label_AD_ErrorMsg.Show();
+                label_AD_Error_Msg.Visible = true;
+                label_AD_Error_Msg.Show();
 
-                panel_AD_ErrorFullName.Visible = true;
-                panel_AD_ErrorFullName.Show();
+                panel_AD_Error_FullName.Visible = true;
+                panel_AD_Error_FullName.Show();
 
-                panel_AD_ErrorAge.Visible = true;
-                panel_AD_ErrorAge.Show();
+                panel_AD_Error_Age.Visible = true;
+                panel_AD_Error_Age.Show();
 
-                panel_AD_ErrorGender.Visible = true;
-                panel_AD_ErrorGender.Show();
+                panel_AD_Error_Gender.Visible = true;
+                panel_AD_Error_Gender.Show();
             }
         }
 
@@ -233,10 +233,10 @@ namespace LoginSystem
 
         private void HideErrorMsg(object sender, EventArgs e)
         {
-            panel_AD_ErrorFullName.Visible = false;
-            panel_AD_ErrorGender.Visible = false;
-            panel_AD_ErrorAge.Visible = false;
-            label_AD_ErrorMsg.Visible = false;
+            panel_AD_Error_FullName.Visible = false;
+            panel_AD_Error_Gender.Visible = false;
+            panel_AD_Error_Age.Visible = false;
+            label_AD_Error_Msg.Visible = false;
             label_AD_SavedSuccessfully.Visible = false;
         }
 

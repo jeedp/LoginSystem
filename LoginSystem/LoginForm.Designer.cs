@@ -91,7 +91,7 @@
             this.button_Exit.Margin = new System.Windows.Forms.Padding(0);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(43, 40);
-            this.button_Exit.TabIndex = 1;
+            this.button_Exit.TabIndex = 5;
             this.button_Exit.UseVisualStyleBackColor = false;
             this.button_Exit.Click += new System.EventHandler(this.button_Exit_Click);
             // 
@@ -104,7 +104,7 @@
             this.textBox_AccountName.Location = new System.Drawing.Point(16, 14);
             this.textBox_AccountName.Name = "textBox_AccountName";
             this.textBox_AccountName.Size = new System.Drawing.Size(484, 21);
-            this.textBox_AccountName.TabIndex = 2;
+            this.textBox_AccountName.TabIndex = 0;
             // 
             // pictureBox_SteamLogo
             // 
@@ -126,7 +126,7 @@
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.PasswordChar = '*';
             this.textBox_Password.Size = new System.Drawing.Size(484, 21);
-            this.textBox_Password.TabIndex = 4;
+            this.textBox_Password.TabIndex = 1;
             // 
             // label_Steam
             // 
@@ -218,7 +218,7 @@
             this.cuiButton_SignIn.PressedOutline = System.Drawing.Color.Empty;
             this.cuiButton_SignIn.Rounding = new System.Windows.Forms.Padding(2);
             this.cuiButton_SignIn.Size = new System.Drawing.Size(370, 58);
-            this.cuiButton_SignIn.TabIndex = 13;
+            this.cuiButton_SignIn.TabIndex = 0;
             this.cuiButton_SignIn.TextOffset = new System.Drawing.Point(0, 0);
             this.cuiButton_SignIn.Click += new System.EventHandler(this.cuiButton_SignIn_Click);
             // 
@@ -248,7 +248,7 @@
             this.cuiCheckbox_RememberMe.Rounding = 2;
             this.cuiCheckbox_RememberMe.ShowSymbols = true;
             this.cuiCheckbox_RememberMe.Size = new System.Drawing.Size(233, 27);
-            this.cuiCheckbox_RememberMe.TabIndex = 14;
+            this.cuiCheckbox_RememberMe.TabIndex = 2;
             this.cuiCheckbox_RememberMe.Text = "Remember Me";
             this.cuiCheckbox_RememberMe.UncheckedForeground = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
             this.cuiCheckbox_RememberMe.UncheckedOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(60)))));
