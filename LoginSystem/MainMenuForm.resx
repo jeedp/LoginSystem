@@ -215,6 +215,19 @@
   <metadata name="studentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>494, 17</value>
   </metadata>
+  <metadata name="studentDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>312, 17</value>
+  </metadata>
+  <data name="button_FM_Expand.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DgAACw4BQL7hQQAAANpJREFUOE/dlEEOgkAMRbkLuuAk4h2Qha68gOIGWBjjnVx4I+MBTJ5p6JBaxoQF
+        JupPJmHoa4f0l0mSnxEwBw7A3qwswmWOqYCZ5wSs6XQDLrryCJebuLCi2nMCtsAdeAAbH/cSRlnJaX08
+        FLwCawW3ngmyjOZECzYS1Odw+uBLfUwLNp4LzV6YfUgszbvSH6Q9HZgXlRaozF4c7Q/4QwEFsDN7GeTi
+        lXojNaUfZGPKyryLmbKMmvKJsZl8sCf/9cZeDtKzUZdDChyBs65TrNlqnsQCJzmp575XTxg706fRk5Zp
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAMDAAAAEAIACoJQAAFgAAACgAAAAwAAAAYAAAAAEAIAAAAAAAACQAACUWAAAlFgAAAAAAAAAA
@@ -379,25 +392,6 @@
         AADQAAAAAAsAANAAAAAACwAA0AAAAAALAADQAAAAAAsAAMgAAAAAEwAAyAAAAAATAADIAAAAABMAAPQA
         AAAALwAA6gAAAABXAAD1AAAAAK8AAPpAAAACXwAA/Rf//+i/AAD/QAAAAv8AAP///////wAA////////
         AAA=
-</value>
-  </data>
-  <metadata name="studentsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>494, 17</value>
-  </metadata>
-  <metadata name="studentDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>312, 17</value>
-  </metadata>
-  <metadata name="studentDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>312, 17</value>
-  </metadata>
-  <data name="button_FM_Expand.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAANpJREFUOE/dlEEOgkAMRbkLuuAk4h2Qha68gOIGWBjjnVx4I+MBTJ5p6JBaxoQF
-        JupPJmHoa4f0l0mSnxEwBw7A3qwswmWOqYCZ5wSs6XQDLrryCJebuLCi2nMCtsAdeAAbH/cSRlnJaX08
-        FLwCawW3ngmyjOZECzYS1Odw+uBLfUwLNp4LzV6YfUgszbvSH6Q9HZgXlRaozF4c7Q/4QwEFsDN7GeTi
-        lXojNaUfZGPKyryLmbKMmvKJsZl8sCf/9cZeDtKzUZdDChyBs65TrNlqnsQCJzmp575XTxg706fRk5Zp
-        AAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="studentsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

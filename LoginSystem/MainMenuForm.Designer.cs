@@ -75,13 +75,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label_AD_AccountInformation = new System.Windows.Forms.Label();
             this.panel_Menu_FamilyManagement = new System.Windows.Forms.Panel();
-            this.panel_FM_Course = new System.Windows.Forms.Panel();
-            this.textBox_FM_Course = new System.Windows.Forms.TextBox();
-            this.panel_FM_Error_Course = new System.Windows.Forms.Panel();
-            this.panel_FM_LastName = new System.Windows.Forms.Panel();
-            this.textBox_FM_LastName = new System.Windows.Forms.TextBox();
-            this.cuiButton_FM_Delete = new CuoreUI.Controls.cuiButton();
-            this.panel_FM_Error_LastName = new System.Windows.Forms.Panel();
             this.dataGridView_StudentsList = new System.Windows.Forms.DataGridView();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,6 +83,14 @@
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDBDataSet = new LoginSystem.StudentDBDataSet();
+            this.cuiButton_FM_Add = new CuoreUI.Controls.cuiButton();
+            this.panel_FM_Course = new System.Windows.Forms.Panel();
+            this.textBox_FM_Course = new System.Windows.Forms.TextBox();
+            this.panel_FM_Error_Course = new System.Windows.Forms.Panel();
+            this.panel_FM_LastName = new System.Windows.Forms.Panel();
+            this.textBox_FM_LastName = new System.Windows.Forms.TextBox();
+            this.cuiButton_FM_Delete = new CuoreUI.Controls.cuiButton();
+            this.panel_FM_Error_LastName = new System.Windows.Forms.Panel();
             this.panel_FM_Age = new System.Windows.Forms.Panel();
             this.textBox_FM_Age = new System.Windows.Forms.TextBox();
             this.panel_FM_Error_Age = new System.Windows.Forms.Panel();
@@ -135,7 +136,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.studentsTableAdapter = new LoginSystem.StudentDBDataSetTableAdapters.StudentsTableAdapter();
-            this.cuiButton_FM_Add = new CuoreUI.Controls.cuiButton();
             this.Panel_Title.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_MenuBottom.SuspendLayout();
@@ -146,11 +146,11 @@
             this.panel_AD_FullName.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_Menu_FamilyManagement.SuspendLayout();
-            this.panel_FM_Course.SuspendLayout();
-            this.panel_FM_LastName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).BeginInit();
+            this.panel_FM_Course.SuspendLayout();
+            this.panel_FM_LastName.SuspendLayout();
             this.panel_FM_Age.SuspendLayout();
             this.panel_FM_FirstName.SuspendLayout();
             this.panel_FM_StudentID.SuspendLayout();
@@ -920,6 +920,127 @@
             this.panel_Menu_FamilyManagement.Size = new System.Drawing.Size(963, 360);
             this.panel_Menu_FamilyManagement.TabIndex = 37;
             // 
+            // dataGridView_StudentsList
+            // 
+            this.dataGridView_StudentsList.AllowUserToAddRows = false;
+            this.dataGridView_StudentsList.AllowUserToDeleteRows = false;
+            this.dataGridView_StudentsList.AllowUserToResizeColumns = false;
+            this.dataGridView_StudentsList.AllowUserToResizeRows = false;
+            this.dataGridView_StudentsList.AutoGenerateColumns = false;
+            this.dataGridView_StudentsList.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_StudentsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_StudentsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_StudentsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentIDDataGridViewTextBoxColumn,
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.ageDataGridViewTextBoxColumn,
+            this.courseDataGridViewTextBoxColumn});
+            this.dataGridView_StudentsList.DataSource = this.studentsBindingSource;
+            this.dataGridView_StudentsList.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridView_StudentsList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView_StudentsList.Location = new System.Drawing.Point(497, 38);
+            this.dataGridView_StudentsList.Name = "dataGridView_StudentsList";
+            this.dataGridView_StudentsList.ReadOnly = true;
+            this.dataGridView_StudentsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView_StudentsList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView_StudentsList.RowTemplate.Height = 24;
+            this.dataGridView_StudentsList.Size = new System.Drawing.Size(466, 322);
+            this.dataGridView_StudentsList.TabIndex = 53;
+            // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studentIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ageDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // courseDataGridViewTextBoxColumn
+            // 
+            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
+            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
+            this.courseDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
+            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.courseDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // studentsBindingSource
+            // 
+            this.studentsBindingSource.DataMember = "Students";
+            this.studentsBindingSource.DataSource = this.studentDBDataSet;
+            // 
+            // studentDBDataSet
+            // 
+            this.studentDBDataSet.DataSetName = "StudentDBDataSet";
+            this.studentDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cuiButton_FM_Add
+            // 
+            this.cuiButton_FM_Add.CheckButton = false;
+            this.cuiButton_FM_Add.Checked = false;
+            this.cuiButton_FM_Add.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton_FM_Add.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton_FM_Add.Content = "Add";
+            this.cuiButton_FM_Add.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.cuiButton_FM_Add.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton_FM_Add.ForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
+            this.cuiButton_FM_Add.HoveredImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.HoverOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.Image = null;
+            this.cuiButton_FM_Add.ImageAutoCenter = true;
+            this.cuiButton_FM_Add.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.Location = new System.Drawing.Point(26, 310);
+            this.cuiButton_FM_Add.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.cuiButton_FM_Add.Name = "cuiButton_FM_Add";
+            this.cuiButton_FM_Add.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
+            this.cuiButton_FM_Add.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.NormalOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.OutlineThickness = 1.6F;
+            this.cuiButton_FM_Add.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            this.cuiButton_FM_Add.PressedForeColor = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton_FM_Add.PressedOutline = System.Drawing.Color.Empty;
+            this.cuiButton_FM_Add.Rounding = new System.Windows.Forms.Padding(2);
+            this.cuiButton_FM_Add.Size = new System.Drawing.Size(138, 38);
+            this.cuiButton_FM_Add.TabIndex = 62;
+            this.cuiButton_FM_Add.TextOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton_FM_Add.Click += new System.EventHandler(this.cuiButton_FM_Add_Click);
+            // 
             // panel_FM_Course
             // 
             this.panel_FM_Course.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
@@ -1015,89 +1136,6 @@
             this.panel_FM_Error_LastName.Size = new System.Drawing.Size(200, 52);
             this.panel_FM_Error_LastName.TabIndex = 61;
             this.panel_FM_Error_LastName.Visible = false;
-            // 
-            // dataGridView_StudentsList
-            // 
-            this.dataGridView_StudentsList.AllowUserToAddRows = false;
-            this.dataGridView_StudentsList.AllowUserToDeleteRows = false;
-            this.dataGridView_StudentsList.AllowUserToResizeColumns = false;
-            this.dataGridView_StudentsList.AllowUserToResizeRows = false;
-            this.dataGridView_StudentsList.AutoGenerateColumns = false;
-            this.dataGridView_StudentsList.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView_StudentsList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_StudentsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_StudentsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentIDDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.courseDataGridViewTextBoxColumn});
-            this.dataGridView_StudentsList.DataSource = this.studentsBindingSource;
-            this.dataGridView_StudentsList.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataGridView_StudentsList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView_StudentsList.Location = new System.Drawing.Point(497, 38);
-            this.dataGridView_StudentsList.Name = "dataGridView_StudentsList";
-            this.dataGridView_StudentsList.ReadOnly = true;
-            this.dataGridView_StudentsList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView_StudentsList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView_StudentsList.RowTemplate.Height = 24;
-            this.dataGridView_StudentsList.Size = new System.Drawing.Size(466, 322);
-            this.dataGridView_StudentsList.TabIndex = 53;
-            // 
-            // studentIDDataGridViewTextBoxColumn
-            // 
-            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
-            this.studentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studentIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ageDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // courseDataGridViewTextBoxColumn
-            // 
-            this.courseDataGridViewTextBoxColumn.DataPropertyName = "Course";
-            this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
-            this.courseDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
-            this.courseDataGridViewTextBoxColumn.ReadOnly = true;
-            this.courseDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // studentsBindingSource
-            // 
-            this.studentsBindingSource.DataMember = "Students";
-            this.studentsBindingSource.DataSource = this.studentDBDataSet;
-            // 
-            // studentDBDataSet
-            // 
-            this.studentDBDataSet.DataSetName = "StudentDBDataSet";
-            this.studentDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel_FM_Age
             // 
@@ -1233,7 +1271,7 @@
             this.label_FM_Error_Msg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(32)))), ((int)(((byte)(45)))));
             this.label_FM_Error_Msg.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_FM_Error_Msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(87)))), ((int)(((byte)(85)))));
-            this.label_FM_Error_Msg.Location = new System.Drawing.Point(116, 282);
+            this.label_FM_Error_Msg.Location = new System.Drawing.Point(34, 282);
             this.label_FM_Error_Msg.Name = "label_FM_Error_Msg";
             this.label_FM_Error_Msg.Size = new System.Drawing.Size(277, 20);
             this.label_FM_Error_Msg.TabIndex = 41;
@@ -1761,44 +1799,6 @@
             // 
             this.studentsTableAdapter.ClearBeforeFill = true;
             // 
-            // cuiButton_FM_Add
-            // 
-            this.cuiButton_FM_Add.CheckButton = false;
-            this.cuiButton_FM_Add.Checked = false;
-            this.cuiButton_FM_Add.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton_FM_Add.CheckedForeColor = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.CheckedImageTint = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton_FM_Add.Content = "Add";
-            this.cuiButton_FM_Add.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.cuiButton_FM_Add.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiButton_FM_Add.ForeColor = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.HoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(152)))), ((int)(((byte)(255)))));
-            this.cuiButton_FM_Add.HoveredImageTint = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.HoverForeColor = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.HoverOutline = System.Drawing.Color.Empty;
-            this.cuiButton_FM_Add.Image = null;
-            this.cuiButton_FM_Add.ImageAutoCenter = true;
-            this.cuiButton_FM_Add.ImageExpand = new System.Drawing.Point(0, 0);
-            this.cuiButton_FM_Add.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton_FM_Add.Location = new System.Drawing.Point(26, 310);
-            this.cuiButton_FM_Add.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.cuiButton_FM_Add.Name = "cuiButton_FM_Add";
-            this.cuiButton_FM_Add.NormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(61)))), ((int)(((byte)(90)))));
-            this.cuiButton_FM_Add.NormalForeColor = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.NormalImageTint = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.NormalOutline = System.Drawing.Color.Empty;
-            this.cuiButton_FM_Add.OutlineThickness = 1.6F;
-            this.cuiButton_FM_Add.PressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            this.cuiButton_FM_Add.PressedForeColor = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.PressedImageTint = System.Drawing.Color.White;
-            this.cuiButton_FM_Add.PressedOutline = System.Drawing.Color.Empty;
-            this.cuiButton_FM_Add.Rounding = new System.Windows.Forms.Padding(2);
-            this.cuiButton_FM_Add.Size = new System.Drawing.Size(138, 38);
-            this.cuiButton_FM_Add.TabIndex = 62;
-            this.cuiButton_FM_Add.TextOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton_FM_Add.Click += new System.EventHandler(this.cuiButton_FM_Add_Click);
-            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1843,13 +1843,13 @@
             this.panel4.PerformLayout();
             this.panel_Menu_FamilyManagement.ResumeLayout(false);
             this.panel_Menu_FamilyManagement.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).EndInit();
             this.panel_FM_Course.ResumeLayout(false);
             this.panel_FM_Course.PerformLayout();
             this.panel_FM_LastName.ResumeLayout(false);
             this.panel_FM_LastName.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_StudentsList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDBDataSet)).EndInit();
             this.panel_FM_Age.ResumeLayout(false);
             this.panel_FM_Age.PerformLayout();
             this.panel_FM_FirstName.ResumeLayout(false);

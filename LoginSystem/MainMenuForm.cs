@@ -242,33 +242,38 @@ namespace LoginSystem
             if (string.IsNullOrWhiteSpace(textBox_FM_FirstName.Text))
             {
                 panel_FM_Error_FirstName.Visible = true;
-                label_FM_Error_Msg.Visible = true;
                 hasError = true;
             }
 
             if (string.IsNullOrWhiteSpace(textBox_FM_LastName.Text))
             {
                 panel_FM_Error_LastName.Visible = true;
-                label_FM_Error_Msg.Visible = true;
                 hasError = true;
             }
 
             if (string.IsNullOrWhiteSpace(textBox_FM_Course.Text))
             {
                 panel_FM_Error_Course.Visible = true;
-                label_FM_Error_Msg.Visible = true;
                 hasError = true;
+            }
+            else if (!textBox_FM_Course.Text.Contains("BS"))
+            {
+                panel_FM_Error_Course.Visible = true;
+                label_FM_Error_Msg.Visible = true;
+                label_FM_Error_Msg.Text = "Please enter a valid course";
+                return;
             }
 
             if (string.IsNullOrWhiteSpace(textBox_FM_Age.Text))
             {
                 panel_FM_Error_Age.Visible = true;
-                label_FM_Error_Msg.Visible = true;
                 hasError = true;
             }
 
             if (hasError)
             {
+                label_FM_Error_Msg.Visible = true;
+                label_FM_Error_Msg.Text = "Please fill in all fields";
                 return;
             }
 
@@ -289,14 +294,14 @@ namespace LoginSystem
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     LoadStudents();
-                    label_FM_UpdatedSuccessfully.Visible = true;
-                    label_FM_UpdatedSuccessfully.Text = "Updated successfully";
-
                     textBox_FM_StudentID.Clear();
                     textBox_FM_FirstName.Clear();
                     textBox_FM_LastName.Clear();
                     textBox_FM_Course.Clear();
                     textBox_FM_Age.Clear();
+
+                    label_FM_UpdatedSuccessfully.Visible = true;
+                    label_FM_UpdatedSuccessfully.Text = "Added successfully";
                 }
                 catch (Exception ex)
                 {
@@ -317,8 +322,7 @@ namespace LoginSystem
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textBox_FM_StudentID.Text) &&
-                string.IsNullOrWhiteSpace(textBox_FM_FirstName.Text) &&
+            if (string.IsNullOrWhiteSpace(textBox_FM_FirstName.Text) &&
                 string.IsNullOrWhiteSpace(textBox_FM_LastName.Text) &&
                 string.IsNullOrWhiteSpace(textBox_FM_Course.Text) &&
                 string.IsNullOrWhiteSpace(textBox_FM_Age.Text))
@@ -391,14 +395,14 @@ namespace LoginSystem
                             if (rowsAffected > 0)
                             {
                                 LoadStudents();
-                                label_FM_UpdatedSuccessfully.Visible = true;
-                                label_FM_UpdatedSuccessfully.Text = "Updated successfully";
-
                                 textBox_FM_StudentID.Clear();
                                 textBox_FM_FirstName.Clear();
                                 textBox_FM_LastName.Clear();
                                 textBox_FM_Course.Clear();
                                 textBox_FM_Age.Clear();
+
+                                label_FM_UpdatedSuccessfully.Visible = true;
+                                label_FM_UpdatedSuccessfully.Text = "Updated successfully";
                             }
                             else
                             {
@@ -440,6 +444,21 @@ namespace LoginSystem
                 panel_FM_Error_Age.Visible = true;
                 label_FM_Error_Msg.Visible = true;
                 label_FM_Error_Msg.Text = "Please enter at least one field to delete";
+                return;
+            }
+            
+            if (!string.IsNullOrWhiteSpace(textBox_FM_StudentID.Text) &&
+                (!string.IsNullOrWhiteSpace(textBox_FM_FirstName.Text) ||
+                !string.IsNullOrWhiteSpace(textBox_FM_LastName.Text) ||
+                !string.IsNullOrWhiteSpace(textBox_FM_Course.Text) ||
+                !string.IsNullOrWhiteSpace(textBox_FM_Age.Text)))
+            {
+                panel_FM_Error_FirstName.Visible = true;
+                panel_FM_Error_LastName.Visible = true;
+                panel_FM_Error_Course.Visible = true;
+                panel_FM_Error_Age.Visible = true;
+                label_FM_Error_Msg.Visible = true;
+                label_FM_Error_Msg.Text = "Fields should be empty when indicating student ID or vice versa";
                 return;
             }
 
@@ -514,7 +533,9 @@ namespace LoginSystem
                         }
                         else
                         {
-                            MessageBox.Show("Invalid Age value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            panel_FM_Error_Age.Visible = true;
+                            label_FM_Error_Msg.Visible = true;
+                            label_FM_Error_Msg.Text = "Invalid Age value";
                             return;
                         }
 
@@ -522,6 +543,12 @@ namespace LoginSystem
 
                     string whereClause = string.Join(" AND ", conditions);
                     cmd.CommandText = $"DELETE FROM Students WHERE {whereClause}";
+
+                    textBox_FM_StudentID.Clear();
+                    textBox_FM_FirstName.Clear();
+                    textBox_FM_LastName.Clear();
+                    textBox_FM_Course.Clear();
+                    textBox_FM_Age.Clear();
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -534,12 +561,6 @@ namespace LoginSystem
                         label_FM_Error_Msg.Visible = true;
                         label_FM_Error_Msg.Text = "No matching student(s) found to delete";
                     }
-
-                    textBox_FM_StudentID.Clear();
-                    textBox_FM_FirstName.Clear();
-                    textBox_FM_LastName.Clear();
-                    textBox_FM_Course.Clear();
-                    textBox_FM_Age.Clear();
 
                     LoadStudents(); 
                 }
